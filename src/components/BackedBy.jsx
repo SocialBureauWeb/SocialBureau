@@ -1,0 +1,43 @@
+import React from "react";
+
+const BackedBy = () => {
+  return (
+    <div className="w-full">
+      {/* Top Section */}
+      <div className="flex flex-col md:flex-row items-center justify-between px-5 md:px-12 lg:px-50 gap-4 bg-transparent">
+        <div className="flex items-center space-x-2">
+          <img
+            src="/assets/trillionedition.png"
+            alt="Logo"
+            className="h-14 md:h-20 cursor-pointer"
+            onClick={() =>
+              window.open("https://trillionedition.vercel.app", "_blank")
+            }
+          />
+          <span className="text-base md:text-lg text-white">
+            Backed by <br />
+            <em className="italic font-bold">TrillionEdition</em>
+          </span>
+        </div>
+        <p className="text-base md:text-lg text-white text-center md:text-right">
+          The consultancy trusted by leading edge businesses globally.
+        </p>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="flex flex-col md:flex-row items-center justify-between bg-black py-20 md:py-10 rounded-lg px-10 md:px-12 lg:px-60 gap-4 mt-4">
+        <h2 className="text-xl md:text-2xl font-semibold text-white text-center md:text-left">
+          Ready to Engineer Growth That Sticks?
+        </h2>
+        <button className="bg-[#ff0000] text-white px-4 py-2 lg:m-20 rounded-md hover:bg-red-700 transition flex items-center gap-2 mt-1 md:mt-0">
+          <img src="/assets/phone.png" alt="phone" className="h-5 md:h-6" />
+          <span className="text-sm md:text-base font-medium">
+            Book a Strategy Call
+          </span>
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default BackedBy;
