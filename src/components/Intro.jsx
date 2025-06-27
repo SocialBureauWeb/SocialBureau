@@ -60,12 +60,12 @@ const Intro = () => {
 
   {/* Main Content */}
   <div className="relative z-10 text-white text-center">
-    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-20 sm:leading-8 md:leading-15 lg:leading-20 font-serif font-normal">
+    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-10 sm:leading-3 md:leading-15 lg:leading-20 font-serif font-normal">
       Unfair Advantage for Niche<br /> Brands in Noisy Markets
     </h1>
 
-    <div className="text-white mt-20 px-[10vw]">
-      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-15 font-sans">
+    <div className="text-white mt-20 px-[8vw]">
+      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-10 lg:leading-15 font-sans">
         We engineer full-funnel growth strategies that <span className="text-[#ff0000]">outperform</span>, not just perform. Powered by precision, insight, and vertical-native expertise.
       </h2>
     </div>
