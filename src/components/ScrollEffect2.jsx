@@ -5,7 +5,6 @@ const ScrollEffect2 = () => {
   const [step, setStep] = useState(0);
   const [showAll, setShowAll] = useState(false);
 
-  // Responsive font sizes and layout styles
   const getResponsiveStyles = () => ({
     container: {
       outline: "none",
@@ -41,7 +40,6 @@ const ScrollEffect2 = () => {
     },
   });
 
-  // Handle window resize for responsiveness
   const [, setWindowSize] = useState([window.innerWidth, window.innerHeight]);
   useEffect(() => {
     const handleResize = () => setWindowSize([window.innerWidth, window.innerHeight]);
@@ -49,46 +47,27 @@ const ScrollEffect2 = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Infinite looping effect, then show all together at the end
   useEffect(() => {
-    setShowAll(false); // Reset showAll on mount
-    let count = 0;
-    const interval = setInterval(() => {
-      setStep((prev) => {
-        if (prev + 1 === lines.length) {
-          count += 1;
-          // Show all after one full cycle (optionally adjust how many cycles)
-          setShowAll(true);
-          clearInterval(interval);
-          setTimeout(() => {
-            setShowAll(false);
-            setStep(0);
-            // Restart the effect
-            count = 0;
-            setTimeout(() => {
-              setStep(1);
-              const newInterval = setInterval(() => {
-                setStep((prevStep) => {
-                  if (prevStep + 1 === lines.length) {
-                    setShowAll(true);
-                    clearInterval(newInterval);
-                    setTimeout(() => {
-                      setShowAll(false);
-                      setStep(0);
-                    }, 2200);
-                  }
-                  return (prevStep + 1) % lines.length;
-                });
-              }, 2200);
-            }, 2200);
-          }, 2200);
-        }
-        return (prev + 1) % lines.length;
-      });
-    }, 2200);
+    let intervalId = null;
+    let localStep = 0;
 
-    return () => clearInterval(interval);
-    // eslint-disable-next-line
+    const runCycle = () => {
+      intervalId = setInterval(() => {
+        if (localStep < lines.length) {
+          setStep(localStep);
+          setShowAll(false);
+          localStep += 1;
+        } else {
+          // Show all for 2.2s
+          setShowAll(true);
+          localStep = 0;
+        }
+      }, 2200);
+    };
+
+    runCycle();
+
+    return () => clearInterval(intervalId);
   }, []);
 
   const styles = getResponsiveStyles();
@@ -102,23 +81,17 @@ const ScrollEffect2 = () => {
                 {line}
               </span>
             ))
-          : lines.map((line, idx) => {
-              let opacity = 0.2;
-              if (step === idx) {
-                opacity = 1;
-              }
-              return (
-                <span
-                  key={line}
-                  style={{
-                    ...styles.line,
-                    opacity,
-                  }}
-                >
-                  {line}
-                </span>
-              );
-            })}
+          : lines.map((line, idx) => (
+              <span
+                key={line}
+                style={{
+                  ...styles.line,
+                  opacity: step === idx ? 1 : 0.2,
+                }}
+              >
+                {line}
+              </span>
+            ))}
       </div>
     </div>
   );
