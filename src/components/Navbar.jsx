@@ -35,7 +35,7 @@ const navigate=useNavigate();
       {/* Desktop Menu */}
       <ul className="hidden md:flex gap-8">
         <li className="hover:text-[#ff0000] hover:font-bold"><Link to="/">Home</Link></li>
-        <li className="hover:text-[#ff0000] hover:font-bold"><a href="#">Services</a></li>
+        <li className="hover:text-[#ff0000] hover:font-bold"><Link to="/services">Services</Link></li>
         <li className="hover:text-[#ff0000] hover:font-bold"><Link to="/about">About</Link></li>
         <li className="hover:text-[#ff0000] hover:font-bold"><a href="#">Contact</a></li>
       </ul>
@@ -51,7 +51,7 @@ const navigate=useNavigate();
       {menuOpen && (
         <ul className="absolute bottom-16 left-0 w-full bg-black text-white flex flex-col items-center gap-6 py-6 md:hidden z-50 shadow-lg">
           <li><a href="#" onClick={toggleMenu}>Home</a></li>
-          <li><a href="#" onClick={toggleMenu}>Services</a></li>
+          <li><Link to="/services">Services</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><a href="#" onClick={toggleMenu}>Contact</a></li>
         </ul>

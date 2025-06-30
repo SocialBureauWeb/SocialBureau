@@ -16,7 +16,7 @@ export const Heading = () => {
   return (
     <div>
 <h1 ref={textRef}
-      className="font-bold text-center py-30 lg:pt-35 text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-30"
+      className="font-bold text-center py-30 lg:pt-35 text-3xl sm:text-3xl md:text-4xl lg:text-6xl mt-30"
       style={{
         fontFamily: "'Cinzel', serif",
         backgroundImage: "linear-gradient(90deg, #000, #fff 50%, #000)",
