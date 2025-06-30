@@ -1,27 +1,22 @@
 import React from 'react'
-import Intro from '../components/Intro'
 import Navbar from '../components/Navbar'
-import Section from '../components/Section'
-import MouseGlow from '../components/MouseGlow'
-import Slider from '../components/Slider'
-import ScrollEffect from '../components/ScrollEffect'
-import BackedBy from '../components/BackedBy'
-import ScrollEffect2 from '../components/ScrollEffect2'
-import Card from '../components/Cards'
+import HomeIntro from '../components/HomeIntro'
+import HomeMouse from '../components/HomeMouse'
+import HomeSection from '../components/HomeSection'
+import HomeCards from '../components/HomeCards'
+import Hometagline from '../components/Hometagline'
+import HomeFooter from '../components/HomeFooter'
 
 export const Home = () => {
   return (
     <div className='bg-black'>      
-        <MouseGlow/>
-        <Intro/>
+        <HomeMouse/>
+        <HomeIntro/>
         <Navbar/>
-        <Section/>
-        <Card/>
-        {/* <ScrollEffect/> */}
-        <ScrollEffect2/>
-        <BackedBy/>
-       
-        {/* <Slider/> */}
+        <HomeSection/>
+        <HomeCards/>
+        <Hometagline/>
+        <HomeFooter/>
     </div>
   )
 }
