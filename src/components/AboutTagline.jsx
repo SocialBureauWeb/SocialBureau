@@ -31,10 +31,10 @@ export const AboutTagline = () => {
       style={{
         width: "100%",
         margin: "0 auto",
-        padding: 24,
+        padding: "3vw",
         borderRadius: 16,
         boxShadow: "0 4px 32px rgba(0,0,0,0.07)",
-        textAlign: "center",
+        textAlign:"center",
         fontFamily: "system-ui, sans-serif",
       }}
     >
@@ -99,7 +99,7 @@ export const AboutTagline = () => {
         @media (min-width: 1000px) {
           .about-text {
             font-size: 30px;
-            max-width: 60%;
+            max-width: 80%;
           }
         }
         /* Small screens */

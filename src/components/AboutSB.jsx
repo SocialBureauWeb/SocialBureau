@@ -70,17 +70,18 @@ export const AboutSB = () => {
         <Heading />
         <style>{`
           .aboutsb-responsive-p {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            font-size: 30px;
-            border-radius: 1.5rem;
-            margin: 0 auto;
-            padding: 3vw 15vw;
-            color: #fff;
-            background: none;
-            z-index: 3;
-          }
+  font-size: 30px;
+  border-radius: 1.5rem;
+  margin: 0 auto;
+  padding: 3vw;
+  color: #fff;
+  background: none;
+  z-index: 3;
+  text-align: center;
+  max-width: 1200px;
+  line-height: 1.4;
+}
+
           @media (max-width: 900px) {
             .aboutsb-responsive-p {
               padding: 40px 16px;

@@ -35,9 +35,9 @@ const navigate=useNavigate();
       {/* Desktop Menu */}
       <ul className="hidden md:flex gap-8">
         <li className="hover:text-[#ff0000] hover:font-bold"><Link to="/">Home</Link></li>
-        <li className="hover:text-red-500 hover:font-bold"><a href="#">Services</a></li>
-        <li className="hover:text-red-500 hover:font-bold"><Link to="/about">About</Link></li>
-        <li className="hover:text-red-500 hover:font-bold"><a href="#">Contact</a></li>
+        <li className="hover:text-[#ff0000] hover:font-bold"><a href="#">Services</a></li>
+        <li className="hover:text-[#ff0000] hover:font-bold"><Link to="/about">About</Link></li>
+        <li className="hover:text-[#ff0000] hover:font-bold"><a href="#">Contact</a></li>
       </ul>
 
       {/* Hamburger */}
