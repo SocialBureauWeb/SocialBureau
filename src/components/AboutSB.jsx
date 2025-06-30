@@ -72,11 +72,11 @@ export const AboutSB = () => {
           .aboutsb-responsive-p {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            font-size: 2rem;
+            justify-content: space-around;
+            font-size: 30px;
             border-radius: 1.5rem;
             margin: 0 auto;
-            padding: 5vw 15vw;
+            padding: 3vw 15vw;
             color: #fff;
             background: none;
             z-index: 3;
