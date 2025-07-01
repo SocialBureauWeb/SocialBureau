@@ -60,8 +60,9 @@ const AboutCursor = () => {
       const dx = mouse.current.x - x;
       const dy = mouse.current.y - y;
       // Lerp for smooth trailing
-      followerPos.current.x += dx * 0.15;
-      followerPos.current.y += dy * 0.15;
+      followerPos.current.x += dx * 0.3;
+      followerPos.current.y += dy * 0.3;
+
 
       if (followerRef.current) {
         followerRef.current.style.left = `${followerPos.current.x}px`;
@@ -82,9 +83,6 @@ const AboutCursor = () => {
       document.body.classList.remove("cursor-none");
     };
   }, []);
-
-  // Optionally expose API for interactive effects (ex: on hover)
-  // Example: add color/scale on hover using a context or imperative handle
 
   return (
     <>

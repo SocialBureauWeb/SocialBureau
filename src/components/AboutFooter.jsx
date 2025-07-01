@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutFooter() {
   return (
-    <section className="max-w-xl mx-auto py-20 px-6">
+    <section className="max-w-xl mx-auto py-20 px-6 pb-50">
       <h1 className="text-3xl sm:text-4xl font-bold mb-4">
         Let’s Build a System That Wins.
       </h1>

@@ -53,6 +53,33 @@ export default function AboutCoreValues() {
     <>
       {/* Inline CSS for effects */}
       <style>{`
+      @keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes wiggle {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+.rotate {
+  animation: rotate 4s ease-in-out infinite;
+}
+.wiggle {
+  animation: wiggle 2s ease-in-out infinite;
+}
+
         .card-3d {
           perspective: 1000px;
           transform-style: preserve-3d;
@@ -60,6 +87,8 @@ export default function AboutCoreValues() {
         }
         .card-3d:hover {
           transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+          scale:1.3;
+          z-index:45;
         }
         .card-inner {
           background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
@@ -106,6 +135,8 @@ export default function AboutCoreValues() {
         .cyber-lines {
           position: relative;
           overflow: hidden;
+          height:40vh;
+          justify-content:center;
         }
         .cyber-lines::before {
           content: '';
@@ -142,22 +173,25 @@ export default function AboutCoreValues() {
           OUR CORE VALUES
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 w-full max-w-7xl">
-          {values.map((val, idx) => (
-            <div
-              className="card-3d fade-in-up"
-              key={val.title}
-              style={{ animationDelay: `${idx * 0.13}s` }}
-            >
-              <div className="card-inner p-8 rounded-xl h-full flex flex-col items-center text-center cyber-lines">
-                <div className="text-4xl mb-6 w-10 h-10">
-                  <img src={val.icon} alt="icon" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 ">{val.title}</h3>
-                <p className="text-sm opacity-80">{val.desc}</p>
-              </div>
-            </div>
-          ))}
+         {values.map((val, idx) => {
+
+  return (
+    <div
+      className="card-3d fade-in-up"
+      key={val.title}
+      style={{ animationDelay: `${idx * 0.13}s` }}
+    >
+      <div className="card-inner p-8 rounded-xl h-full flex flex-col items-center text-center cyber-lines">
+        <div className={`text-4xl mb-6 w-10 h-10 float`}>
+          <img src={val.icon} alt="icon" />
         </div>
+        <h3 className="text-xl font-bold mb-4">{val.title}</h3>
+        <p className="text-sm opacity-80">{val.desc}</p>
+      </div>
+    </div>
+  );
+})}
+</div>
       </section>
     </>
   );
