@@ -12,7 +12,6 @@ const icons = [
   <i className="fas fa-rocket text-red-600 text-2xl"></i>,
 ];
 
-// Array of unique images, one for each card (replace URLs as needed)
 const cardImages = [
   "assets/service1.jpeg",
   "assets/service2.jpeg",
@@ -86,7 +85,7 @@ const ServicesList = forwardRef(function ServicesList(_, ref) {
   return (
     <section
       ref={ref}
-      className="min-h-screen bg-black flex items-center justify-center py-8"
+      className="min-h-screen bg-black flex items-center justify-center"
     >
       <style>{`
         .slide-up {
@@ -124,6 +123,7 @@ const ServicesList = forwardRef(function ServicesList(_, ref) {
         }
         .flip-front {
           background: #000;
+          justify-content:center;
           border: 1px solid #262626;
           box-shadow: 0 4px 24px 0 rgba(239, 68, 68, 0.0);
         }
@@ -140,7 +140,7 @@ const ServicesList = forwardRef(function ServicesList(_, ref) {
         ref={gridRef}
         className={`max-w-7xl w-full px-2 sm:px-4 slide-up${isVisible ? " visible" : ""}`}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 pb-40">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 pb-20 lg:pb-40 ">
           {cards.map((card, idx) => (
             <div className="flip-card group" tabIndex={0} key={card.title}>
               <div className="flip-inner">
@@ -178,7 +178,6 @@ const ServicesList = forwardRef(function ServicesList(_, ref) {
                     backgroundImage: `url('${cardImages[idx % cardImages.length]}')`
                   }}
                 >
-                  {/* Image only on back */}
                 </div>
               </div>
             </div>

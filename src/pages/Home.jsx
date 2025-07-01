@@ -6,6 +6,7 @@ import HomeSection from '../components/HomeSection'
 import HomeCards from '../components/HomeCards'
 import Hometagline from '../components/Hometagline'
 import HomeFooter from '../components/HomeFooter'
+import Footer from '../components/Footer'
 
 export const Home = () => {
   return (
@@ -17,6 +18,7 @@ export const Home = () => {
         <HomeCards/>
         <Hometagline/>
         <HomeFooter/>
+        <Footer/>
     </div>
   )
 }

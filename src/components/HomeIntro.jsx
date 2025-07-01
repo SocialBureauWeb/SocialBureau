@@ -36,7 +36,7 @@ const HomeIntro = () => {
       >
         <video
           ref={videoRef}
-          src="assets/sb.mp4"
+          src="assets/intro.mp4"
           autoPlay
           muted
           loop

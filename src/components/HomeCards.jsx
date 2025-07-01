@@ -168,7 +168,7 @@ function Card({
   }
 
   return (
-    <div
+    <div  class="mob-title"
       style={{
         borderRadius: "32px",
         background,
@@ -176,7 +176,7 @@ function Card({
         padding: "40px",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "flex-end",
+        justifyContent: "center",
         minHeight: "340px",
         boxShadow:
           color === "white-card"
@@ -187,26 +187,32 @@ function Card({
         ...style,
       }}
     >
-      <div
-        style={{
-          textAlign: align,
-        }}
-      >
-        <div
-          style={{
-            fontFamily: "'EB Garamond', serif",
-            fontWeight: 400,
-            fontSize: "2.6rem",
-            lineHeight: 1.1,
-            color: color === "white-card" ? "#111" : "#fff",
-          }}
-        >
+      <style>
+        {`
+          .card-title {
+            font-family: 'EB Garamond', serif;
+            font-weight: 400;
+            font-size: 2.6rem;
+            line-height: 1.1;
+            text-align: ${align};
+          }
+          @media (max-width: 600px) {
+            .card-title {
+              font-size: 1.8rem;              
+              text-align:center;
+            }
+          }
+        `}
+      </style>
+      <div>
+        <div className="card-title">
           {title}
         </div>
       </div>
     </div>
   );
 }
+
 
 function CenterText() {
   return (

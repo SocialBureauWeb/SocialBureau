@@ -5,6 +5,7 @@ import AboutCursor from '../components/AboutCursor'
 import { AboutTagline } from '../components/AboutTagline'
 import AboutFooter from '../components/AboutFooter'
 import AboutCoreValues from '../components/AboutCoreValues'
+import Footer from '../components/Footer'
 
 export const About = () => {
 
@@ -16,6 +17,7 @@ export const About = () => {
         <AboutCoreValues/>
         <AboutFooter/>
         <Navbar/>
+        <Footer/>
     </div>
   )
 }
