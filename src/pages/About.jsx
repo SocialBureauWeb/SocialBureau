@@ -6,12 +6,13 @@ import { AboutTagline } from '../components/AboutTagline'
 import AboutFooter from '../components/AboutFooter'
 import AboutCoreValues from '../components/AboutCoreValues'
 import Footer from '../components/Footer'
+import HomeMouse from '../components/HomeMouse'
 
 export const About = () => {
 
   return (
     <div className='bg-black text-white '>
-      <AboutCursor/>        
+      <HomeMouse/>      
         <AboutSB/>
         <AboutTagline/>
         <AboutCoreValues/>

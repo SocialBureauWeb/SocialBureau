@@ -8,6 +8,8 @@ import { Services } from './pages/Services'
 import { CaseStudy } from './pages/CaseStudy'
 import ScrollTop from './components/ScrollTop'
 import { Blog } from './pages/Blog'
+import { Contact } from './pages/Contact'
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
          <Route path="/casestudy" element={<CaseStudy />} />
         <Route path="/services" element={<Services />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
     </>

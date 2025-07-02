@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BlogHeader() {
   return (
-    <section className="text-center py-10 px-4 bg-black">
+    <section className="text-center py-30 px-4 bg-black">
       <div className="flex justify-center items-center mb-3">
         <div className="w-20 h-px bg-red-600 mr-2"></div>
         {/* Optional: remove or adjust if you don't want a gap */}

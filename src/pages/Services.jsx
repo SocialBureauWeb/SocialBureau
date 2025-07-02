@@ -5,6 +5,7 @@ import ServicesList from '../components/ServicesList'
 import ServiceFooter from '../components/ServiceFooter'
 import Footer from '../components/Footer'
 import AboutCursor from '../components/AboutCursor'
+import HomeMouse from '../components/HomeMouse'
 
 export const Services = () => {
     const listRef = useRef(null);
@@ -18,7 +19,7 @@ export const Services = () => {
 
   return (
     <div>
-      <AboutCursor/>  
+      <HomeMouse/>
         <Navbar/>
       <ServicesHeader onArrowClick={handleArrowClick} />
       <ServicesList ref={listRef} />

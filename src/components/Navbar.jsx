@@ -24,7 +24,7 @@ export default function Navbar() {
 const navigate=useNavigate();
   return (
     <nav
-  className={`fixed bottom-0 left-0 w-full bg-[rgba(0,0,0,0.3)] text-white px-6 py-4 flex items-center justify-between transition-opacity duration-500 z-50 ${
+  className={`fixed bottom-0 left-0 w-full bg-[rgba(0,0,0,0.4)] text-white px-6 py-4 flex items-center justify-between transition-opacity duration-500 z-50 ${
     showNavbar ? "opacity-100" : "opacity-0 pointer-events-none"
   }`}
 >
@@ -39,7 +39,7 @@ const navigate=useNavigate();
         <li className="hover:text-[#ff0000] hover:font-bold"><Link to="/about">About</Link></li>
         <li className="hover:text-[#ff0000] hover:font-bold"><Link to="/casestudy">Case Studies</Link></li>
         <li className="hover:text-[#ff0000] hover:font-bold"><Link to="/blog">Blog</Link></li>
-        <li className="hover:text-[#ff0000] hover:font-bold"><a href="#">Contact</a></li>
+        <li className="hover:text-[#ff0000] hover:font-bold"><Link to="/contact">Contact</Link></li>
       </ul>
 
       {/* Hamburger */}
@@ -57,6 +57,7 @@ const navigate=useNavigate();
           <li><Link to="/about">About</Link></li>
           <li><Link to="/casestudy">Case Studies</Link></li>
           <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
       )}
     </nav>
