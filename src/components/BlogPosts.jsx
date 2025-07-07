@@ -84,7 +84,8 @@ export default function BlogPosts() {
       : posts.filter((post) => post.category === selectedCategory);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10 bg-black">
+    <div className="bg-[url('/assets/bg.png')] bg-cover bg-center">
+    <div className="max-w-6xl mx-auto px-4 py-10 ">
       {/* If a post is selected, show detailed view */}
       {activePost ? (
         <div className="bg-gradient-to-br from-black to-[#3f0000] rounded-xl p-8 shadow-xl border border-[#3f0000]">
@@ -100,7 +101,7 @@ export default function BlogPosts() {
     <span className="text-xs font-medium bg-white text-red-600 px-3 py-1 rounded-full">
       {activePost.category}
     </span>
-    <span className="text-xs text-white">{activePost.time}</span>
+    <span className="text-xs text-white ml-5">{activePost.time}</span>
   </div>
 
   <h2 className="text-3xl text-white font-semibold  mb-4">
@@ -185,6 +186,7 @@ export default function BlogPosts() {
           </div>
         </>
       )}
+    </div>
     </div>
   );
 }

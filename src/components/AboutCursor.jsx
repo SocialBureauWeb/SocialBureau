@@ -34,20 +34,16 @@ const AboutCursor = () => {
   const cursorRef = useRef(null);
   const followerRef = useRef(null);
 
-  // Store last mouse position for follower
   const mouse = useRef({ x: 0, y: 0 });
-  // Used for follower animation frame
   const followerPos = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    // Hide default cursor on body
     document.body.classList.add("cursor-none");
 
     const moveCursor = (e) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
 
-      // Main cursor moves instantly
       if (cursorRef.current) {
         cursorRef.current.style.left = `${e.clientX}px`;
         cursorRef.current.style.top = `${e.clientY}px`;
@@ -59,7 +55,6 @@ const AboutCursor = () => {
       const { x, y } = followerPos.current;
       const dx = mouse.current.x - x;
       const dy = mouse.current.y - y;
-      // Lerp for smooth trailing
       followerPos.current.x += dx * 0.3;
       followerPos.current.y += dy * 0.3;
 
@@ -74,7 +69,6 @@ const AboutCursor = () => {
     window.addEventListener("mousemove", moveCursor);
     animId = requestAnimationFrame(animateFollower);
 
-    // Init on mount for SSR
     followerPos.current = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 
     return () => {

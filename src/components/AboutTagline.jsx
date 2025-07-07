@@ -42,9 +42,8 @@ export const AboutTagline = () => {
         We obsess over one thing:{" "}
         <span className="highlight">RESULTS</span>.
         <br className="about-break" />
-        Whether it’s cutting <span className="highlight">CAC</span>,
-        unlocking new audiences, or compounding{" "}
-        <span className="highlight">LTV</span>—we move fast,
+        Whether it’s cutting CAC,
+        unlocking new audiences, or compounding LTV—we move fast,{" "}
         <span
           className="animated-text"
         >

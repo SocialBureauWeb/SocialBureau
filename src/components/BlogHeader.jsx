@@ -5,9 +5,8 @@ export default function BlogHeader() {
     <section className="text-center py-30 px-4 bg-black">
       <div className="flex justify-center items-center mb-3">
         <div className="w-20 h-px bg-red-600 mr-2"></div>
-        {/* Optional: remove or adjust if you don't want a gap */}
       </div>
-      <h2 className="text-3xl md:text-8xl font-bold leading-tight text-white">
+      <h2 className="text-3xl md:text-8xl font-bold leading-tight text-white" style={{ fontFamily: "Playfair Display, serif" }}>
         Performance Insights
         <br />
         <span className="text-transparent bg-clip-text bg-gradient-to-t from-[#ff0000]">

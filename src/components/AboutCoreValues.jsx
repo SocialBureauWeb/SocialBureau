@@ -29,7 +29,6 @@ const values = [
 ];
 
 export default function AboutCoreValues() {
-  // Fade-in-up on scroll
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -51,7 +50,6 @@ export default function AboutCoreValues() {
 
   return (
     <>
-      {/* Inline CSS for effects */}
       <style>{`
       @keyframes float {
   0% { transform: translateY(0px); }
@@ -168,7 +166,7 @@ export default function AboutCoreValues() {
       <section className="py-40 px-6 bg-black flex flex-col items-center">
         <h2
           className="text-3xl md:text-5xl font-black text-center mb-16"
-          style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700 }}
+          style={{ fontFamily: "Playfair Display, serif" }}
         >
           OUR CORE VALUES
         </h2>

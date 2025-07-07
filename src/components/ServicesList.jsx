@@ -1,18 +1,18 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 
-// ICONS
 const icons = [
-  <i className="fas fa-chart-line"></i>,
-  <i className="fas fa-sitemap"></i>,
-  <i className="fas fa-bullseye"></i>,
-  <i className="fas fa-comments"></i>,
-  <i className="fas fa-cogs"></i>,
-  <i className="fas fa-crosshairs"></i>,
-  <i className="fas fa-users"></i>,
-  <i className="fas fa-envelope"></i>,
-  <i className="fas fa-rocket"></i>,
+  <i className="fas fa-chart-line text-red-600 text-2xl"></i>,
+  <i className="fas fa-sitemap text-red-600 text-2xl"></i>,
+  <i className="fas fa-bullseye text-red-600 text-2xl"></i>,
+  <i className="fas fa-comments text-red-600 text-2xl"></i>,
+  <i className="fas fa-cogs text-red-600 text-2xl"></i>,
+  <i className="fas fa-crosshairs text-red-600 text-2xl"></i>,
+  <i className="fas fa-users text-red-600 text-2xl"></i>,
+  <i className="fas fa-envelope text-red-600 text-2xl"></i>,
+  <i className="fas fa-rocket text-red-600 text-2xl"></i>,
 ];
 
+// Array of unique images, one for each card (replace URLs as needed)
 const cardImages = [
   "assets/service1.jpeg",
   "assets/service2.jpeg",
@@ -28,205 +28,163 @@ const cardImages = [
 const cards = [
   {
     title: "Full-Funnel Performance Marketing",
-    description:
-      "Click costs don't matter if they don't convert. We deploy vertical-informed models and 14-day sprint cycles tied to LTV, not vanity ROAS.",
+    description: "Click costs don't matter if they don't convert. We deploy vertical-informed models and 14-day sprint cycles tied to LTV, not vanity ROAS."
   },
   {
     title: "Funnel Architecture & Growth Pathways",
-    description:
-      "Stop leaking revenue. We map awareness to LTV with customized, P&L-aligned blueprints.",
+    description: "Stop leaking revenue. We map awareness to LTV with customized, P&L-aligned blueprints."
   },
   {
     title: "Conversion Rate Optimization & Landing Systems",
-    description:
-      "Built with psychology, tested with micro-experiments. Bounce less. Convert more.",
+    description: "Built with psychology, tested with micro-experiments. Bounce less. Convert more."
   },
   {
     title: "Messaging & Positioning for Niche Brands",
-    description:
-      "Generic messaging kills growth. We uncover category-specific codes using ethnographic and linguistic analysis.",
+    description: "Generic messaging kills growth. We uncover category-specific codes using ethnographic and linguistic analysis."
   },
   {
     title: "API-Driven Growth & Automated Distribution",
-    description:
-      "Eliminate friction. Merge engineering + marketing for compounding growth loops.",
+    description: "Eliminate friction. Merge engineering + marketing for compounding growth loops."
   },
   {
     title: "Niche Market Penetration Strategy",
-    description:
-      "We speak fluent healthtech, crypto, fintech, and more. Penetrate with precision.",
+    description: "We speak fluent healthtech, crypto, fintech, and more. Penetrate with precision."
   },
   {
     title: "Influencer & UGC Growth Engines",
-    description:
-      "No vanity metrics. Just creator content built for performance and attribution.",
+    description: "No vanity metrics. Just creator content built for performance and attribution."
   },
   {
     title: "Lifecycle & Email Automation Strategy",
-    description:
-      "Trigger behavior-based flows that drive revenue—measured on 30-day impact.",
+    description: "Trigger behavior-based flows that drive revenue—measured on 30-day impact."
   },
   {
     title: "Software GTM & Growth Architecture",
-    description:
-      "PLG meets sales-assist in a system that converts trials and grows MRR.",
+    description: "PLG meets sales-assist in a system that converts trials and grows MRR."
   },
 ];
 
-function useActiveSection(refs) {
-  const [activeIdx, setActiveIdx] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      const centerY = window.innerHeight / 2;
-      let closestIdx = 0;
-      let minDist = Infinity;
-      refs.forEach((ref, idx) => {
-        if (ref.current) {
-          const rect = ref.current.getBoundingClientRect();
-          const mid = (rect.top + rect.bottom) / 2;
-          const dist = Math.abs(mid - centerY);
-          if (dist < minDist) {
-            minDist = dist;
-            closestIdx = idx;
-          }
-        }
-      });
-      setActiveIdx(closestIdx);
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [refs]);
-  return activeIdx;
-}
-const GradientCircle = ({ icon }) => (
-  <div className="flex items-center justify-center w-full h-full">
-    <div
-      className="relative"
-      style={{
-        width: "min(32vw, 520px)",
-        height: "min(32vw, 520px)",
-        minWidth: 320,
-        minHeight: 320,
-        maxWidth: 520,
-        maxHeight: 520,
-      }}
-    >
-      <svg width="100%" height="100%" viewBox="0 0 520 520" style={{ position: "absolute", top: 0, left: 0 }}>
-        <defs>
-          <radialGradient id="grad" cx="50%" cy="50%" r="80%" fx="50%" fy="50%">
-            <stop offset="0%" stopColor="#ff0000" />
-            <stop offset="100%" stopColor="#000" />
-          </radialGradient>
-        </defs>
-        <circle cx="260" cy="260" r="260" fill="url(#grad)" />
-      </svg>
-      <div
-        className="absolute"
-        style={{
-          top: "50%", left: "50%", transform: "translate(-50%, -50%)",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          width: 120, height: 120, borderRadius: "50%"
-        }}
-      >
-        <span style={{
-          fontSize: "4rem",
-          color: "white",
-          filter: "drop-shadow(0 0 8px #fff5)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: 120, height: 120,
-        }}>
-          {icon}
-        </span>
-      </div>
-    </div>
-  </div>
-);
+function useOnScreen(ref, rootMargin = "0px") {
+  const [isIntersecting, setIntersecting] = useState(false);
 
-const getFontStyle = () => ({
-  fontFamily: '"Playfair Display", serif',
-  fontWeight: 400,
-  letterSpacing: "-0.01em"
-});
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setIntersecting(entry.isIntersecting),
+      { rootMargin }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [ref, rootMargin]);
+
+  return isIntersecting;
+}
 
 const ServicesList = forwardRef(function ServicesList(_, ref) {
-  const cardRefs = useRef(cards.map(() => React.createRef()));
-  const activeIdx = useActiveSection(cardRefs.current);
+  const gridRef = useRef();
+  const isVisible = useOnScreen(gridRef, "-50px");
 
   return (
     <section
       ref={ref}
-      className="w-full bg-black flex flex-row items-start justify-center"
-      style={{ width: "100vw", maxWidth: "100vw" }}
+      className="min-h-screen bg-black flex items-center justify-center py-8"
     >
-      {/* LEFT COLUMN */}
+      <style>{`
+        .slide-up {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .slide-up.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .flip-card {
+          width: 340px;
+          height: 320px;
+          perspective: 1000px;
+        }
+        .flip-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+          transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-inner,
+        .flip-card:focus-within .flip-inner {
+          transform: rotateY(180deg);
+        }
+        .flip-front, .flip-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          border-radius: 0.75rem;
+          overflow: hidden;
+        }
+        .flip-front {
+          background: #000;
+          border: 1px solid #262626;
+          box-shadow: 0 4px 24px 0 rgba(239, 68, 68, 0.0);
+        }
+        .flip-back {
+          background-size: cover;
+          background-position: center;
+          transform: rotateY(180deg);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      `}</style>
       <div
-  className="hidden md:flex items-center justify-center"
-  style={{
-    width: "44vw",
-    minWidth: 320,
-    maxWidth: 640,
-    height: "100vh",
-    position: "sticky",
-    top: 0,
-  }}
->
-  <GradientCircle icon={icons[activeIdx]} />
-</div>
-
-
-      {/* RIGHT COLUMN */}
-      <div
-        className="flex flex-col gap-20 pl-8 pr-8"
-        style={{ flex: 1 }}
+        ref={gridRef}
+        className={`max-w-7xl w-full px-2 sm:px-4 slide-up${isVisible ? " visible" : ""}`}
       >
-        {cards.map((card, idx) => (
-          <div
-  ref={cardRefs.current[idx]}
-  key={card.title}
-  style={{
-    minHeight: "30vh",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-  }}
->
-  {/* Row for title and arrow */}
-  <div
-    style={{
-      display: "flex",
-      alignItems: "center",
-      textAlign: "left",
-    }}
-    className="transform transition-transform duration-300 hover:translate-x-5"
-  >
-    <div
-      className="text-[clamp(2.2rem,7vw,3rem)] leading-none text-white "
-      style={{ ...getFontStyle() }}
-    >
-      {card.title}
-    </div>
-    <div className="ml-5 text-[#ff0000] text-3xl ">
-      <i className="fas fa-arrow-right"></i>
-    </div>
-  </div>
-
-  {/* Description */}
-  <div
-    className="text-base font-normal text-white/70 mt-2 max-w-2xl"
-    style={{
-      fontSize: "clamp(1rem,2vw,1.2rem)",
-      textAlign: "left",
-    }}
-  >
-    {card.description}
-  </div>
-</div>
-
-        ))}
-      </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 pb-40">
+          {cards.map((card, idx) => (
+            <div className="flip-card group" tabIndex={0} key={card.title}>
+              <div className="flip-inner">
+                <div className="flip-front flex flex-col gap-4 p-6 sm:p-8 shadow-lg">
+                  <div className="flex items-center justify-between">
+                    {icons[idx]}
+                    <span className="text-neutral-400">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="mt-2 text-base sm:text-lg font-bold text-white">
+                      {card.title}
+                    </h3>
+                    <p className="mt-2 text-neutral-300 text-sm sm:text-base">
+                      {card.description}
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="flip-back"
+                  style={{
+                    backgroundImage: `url('${cardImages[idx % cardImages.length]}')`
+                  }}
+                >
+                  {/* Image only on back */}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>      
     </section>
   );
 });

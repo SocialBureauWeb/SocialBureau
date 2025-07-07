@@ -9,7 +9,9 @@ import { CaseStudy } from './pages/CaseStudy'
 import ScrollTop from './components/ScrollTop'
 import { Blog } from './pages/Blog'
 import { Contact } from './pages/Contact'
-import "@fortawesome/fontawesome-free/css/all.min.css";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import { ServiceDetails } from './pages/ServiceDetails'
+import VoiceAsst from './pages/VoiceAsst'
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/service" element={<ServiceDetails />} />
+        <Route path="/voice" element={<VoiceAsst />} />
       </Routes>
     </BrowserRouter>
     </>

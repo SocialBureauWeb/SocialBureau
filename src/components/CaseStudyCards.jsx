@@ -102,12 +102,12 @@ export default function CaseStudyCards() {
   };
 
   return (
-    <main className="bg-black min-h-screen p-4 sm:p-2 flex flex-col gap-20">
-      {caseStudies.map((cs, index) => (
-        <section
-          key={index}
-          className="relative p-5 transition duration-300 border border-neutral-800 hover:border-red-600 hover:scale-105 rounded-lg bg-black shadow-sm mx-[5vw] lg:mx-[20vw] sm:p-10 hover:shadow-[0_0_20px_2px_rgba(239,68,68,0.5)] before:content-[''] before:absolute before:top-0 before:left-0 before:h-1 before:w-full before:origin-left before:scale-x-0 before:bg-red-600 before:transition-transform before:duration-300 hover:before:scale-x-100"
-        >
+    <main className="bg-black min-h-screen p-4 sm:p-2 flex flex-col gap-20 bg-[url('/assets/bg.png')] bg-cover bg-center bg-fixed overflow-y-auto">
+  {caseStudies.map((cs, index) => (
+    <section
+      key={index}
+      className="relative p-5 transition duration-300 border border-neutral-800 hover:border-red-600 hover:scale-105 rounded-lg bg-black shadow-sm mx-[5vw] lg:mx-[20vw] sm:p-10 hover:shadow-[0_0_20px_2px_rgba(239,68,68,0.5)] before:content-[''] before:absolute before:top-0 before:left-0 before:h-1 before:w-full before:origin-left before:scale-x-0 before:bg-red-600 before:transition-transform before:duration-300 hover:before:scale-x-100"
+    >
           <div className="flex flex-col gap-4 mb-6">
             <span className="inline-block bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest w-40">
               {cs.category}

@@ -134,19 +134,25 @@ export default function ContactSection() {
             <p className="font-medium mb-3">Talk to a Growth Architect</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <button
-                type="button"
+                onClick={() => {
+                  window.open(
+                    "https://wa.me/916238422887?text=Hello, I would like to learn more.",
+                    "_blank"
+                  );
+                }}
                 className="bg-[#ff0000] hover:bg-red-700 transition text-white font-medium py-3 px-5 rounded-md flex items-center justify-center gap-2"
               >
                 <i className="fas fa-calendar-alt"></i>
-                Book a Call
+                <span>Book a Call</span>
               </button>
-              <button
-                type="button"
-                className="border border-[#ff0000] text-white hover:bg-[#ff0000] transition font-medium py-3 px-5 rounded rounded-md flex items-center justify-center gap-2"
-              >
-                <i className="fas fa-envelope"></i>
-                Drop Us a Line
-              </button>
+              <a
+  href="mailto:admin@socialbureau.in?subject=Inquiry&body=I would like to learn more."
+  className="border border-[#ff0000] text-white hover:bg-[#ff0000] transition font-medium py-3 px-5 rounded-md flex items-center justify-center gap-2"
+>
+  <i className="fas fa-envelope"></i>
+  Drop Us a Line
+</a>
+
             </div>
           </div>
         </form>
@@ -156,8 +162,8 @@ export default function ContactSection() {
       <div className="flex-1 flex items-center">
         <div className="bg-gradient-to-br from-black to-[#3f0000] p-6 rounded-lg shadow-lg w-full text-center flex flex-col justify-between">
           <div className="flex flex-col items-center">
-            <div className="bg-[#ff0000] w-12 h-12 flex items-center justify-center rounded-full mb-4">
-              <i className="fas fa-rocket text-white"></i>
+            <div className="bg-gradient-to-br from-black to-[#3f0000] w-10 h-10 flex items-center justify-center rounded-full mb-4">
+              <i className="fas fa-rocket text-[#ff0000]"></i>
             </div>
             <p className="text-lg mb-6">
               "Whether you're stuck in an acquisition plateau or scaling to your
@@ -177,17 +183,30 @@ export default function ContactSection() {
                 </p>
               </div>
             </div>
-            <div className="border-t border-neutral-700 w-full mt-4 pt-4 flex justify-center gap-6 text-gray-400">
-              <a href="#">
-                <i className="fab fa-linkedin"></i>
+            <div className="border-t border-neutral-700 w-full mt-4 pt-4 flex justify-center gap-4 text-gray-400">
+              <a 
+                href="https://www.linkedin.com/company/socialbureau-in" 
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition"
+              >
+                <i class="fab fa-linkedin"></i>
               </a>
-              <a href="#">
+              <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="#">
-                <i className="fas fa-globe"></i>
+              <a href="mailto:info@socialbureau.in" class="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
+                <i className="fas fa-envelope"></i>
               </a>
-            </div>
+              <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
+                <i className="fab fa-facebook"></i>
+              </a>
+              <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
+                <i className="fab fa-instagram"></i>
+              </a>
+
+            </div><br/>
+            <p className="text-sm text-center text-gray-400">
+         © 2024 SocialBureau. All rights reserved.
+      </p>
           </div>
         </div>
       </div>
