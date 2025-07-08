@@ -14,7 +14,7 @@ const ServicesHeader = forwardRef(function ServicesHeader({ onArrowClick }, ref)
       <div className="flex items-center justify-center mb-2 py-2">
         <span className="block w-10 sm:w-25 h-0.5 bg-[#ff0000] mr-2 sm:mr-3" />
       </div>
-      <p className="max-w-4xl text-base xs:text-lg sm:text-xl text-neutral-400 font-medium ">
+      <p className="max-w-4xl text-base xs:text-lg sm:text-xl text-neutral-300 font-medium ">
         From funnel architecture to automated distribution, every Social Bureau service is built to fix leaky journeys, kill bloated CAC, and multiply your performance metrics.
       </p>
       <br />

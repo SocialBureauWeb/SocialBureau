@@ -1,4 +1,3 @@
-// Logo.jsx
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
@@ -35,10 +34,9 @@ export default function Logo({ onComplete }) {
         }
       });
 
-      // 👇 Scroll trigger after animation completes
-      const scrollDelay = word.length * 100 + 1000; // audio duration + buffer
+      const scrollDelay = word.length * 100 + 1000;
       const t = setTimeout(() => {
-        if (onComplete) onComplete(); // Notify parent
+        if (onComplete) onComplete();
       }, scrollDelay);
 
       return () => clearTimeout(t);
@@ -55,41 +53,44 @@ export default function Logo({ onComplete }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        fontSize: "4rem",
+        fontSize: "clamp(2rem, 6vw, 4rem)", // Responsive font size
         fontWeight: "bold",
         fontFamily: "MyFont, sans-serif",
         overflow: "hidden",
         cursor: !userInteracted ? "pointer" : "default",
         transition: "transform 1s ease-in-out",
-        transform: showRest ? "scale(1.5)" : "scale(1)",
+        transform: showRest ? "scale(2)" : "scale(1)",
+        textAlign: "center",
+        padding: "0 1rem",
       }}
     >
       {!userInteracted ? (
         <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{
-        opacity: [0, 1, 0.8, 1],
-        scale: [0.8, 1, 1.05, 1],
-      }}
-      transition={{
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-      whileHover={{
-        scale: 1.2,
-        textShadow: "0px 0px 10px #fff",
-        color: "#ff4d4d",
-      }}
-      style={{
-        fontSize: "1rem",
-        color: "#fff",
-        cursor: "pointer",
-        textAlign: "center",
-      }}
-    >
-      Click to start
-    </motion.div>
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{
+            opacity: [0, 1, 0.8, 1],
+            scale: [0.8, 1, 1.05, 1],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          whileHover={{
+            scale: 1.2,
+            textShadow: "0px 0px 10px #fff",
+            color: "#ff4d4d",
+          }}
+          style={{
+            fontSize: "clamp(1rem, 2.5vw, 1.5rem)",
+            color: "#fff",
+            cursor: "pointer",
+            textAlign: "center",
+            padding: "0 0.5rem",
+          }}
+        >
+          Click to start
+        </motion.div>
       ) : (
         <div
           style={{
@@ -97,6 +98,8 @@ export default function Logo({ onComplete }) {
             gap: "0.05em",
             position: "relative",
             letterSpacing: "-0.03em",
+            flexWrap: "wrap",
+            justifyContent: "center",
           }}
         >
           {word.map((letter, index) => {
@@ -116,6 +119,7 @@ export default function Logo({ onComplete }) {
                   transition: isB
                     ? "transform 0.8s ease"
                     : `opacity 0.5s ease ${0.1 * index}s`,
+                  fontSize: "clamp(2rem, 6vw, 4rem)",
                 }}
               >
                 {letter}
