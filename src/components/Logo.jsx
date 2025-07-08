@@ -58,7 +58,7 @@ export default function Logo({ onComplete }) {
         overflow: "hidden",
         cursor: !userInteracted ? "pointer" : "default",
         transition: "transform 1s ease-in-out",
-        transform: showRest ? "scale(1.7)" : "scale(1)",
+        transform: showRest ? "scale(1.6)" : "scale(1)",
         textAlign: "center",
         padding: "0 1rem",
       }}

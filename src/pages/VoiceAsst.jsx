@@ -376,8 +376,8 @@ export default function VoiceAsst() {
               <div className="text-xl lg:text-2xl leading-relaxed font-thin" style={{ fontFamily: "Inter, sans-serif" }}>
                 {highlightedText ? (
                   <>
-                    <span className="font-bold text-2xl lg:text-3xl">{highlightedText}</span>
-                    <span>{currentMessage.slice(highlightedText.length)}</span>
+                    <span>{highlightedText}</span>
+                    <span></span>
                   </>
                 ) : (
                   currentMessage
