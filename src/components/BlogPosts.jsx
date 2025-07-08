@@ -84,7 +84,7 @@ export default function BlogPosts() {
       : posts.filter((post) => post.category === selectedCategory);
 
   return (
-    <div className="bg-[url('/assets/bg.png')] bg-cover bg-center">
+    <div className="bg-black bg-cover bg-center">
     <div className="max-w-6xl mx-auto px-4 py-10 ">
       {/* If a post is selected, show detailed view */}
       {activePost ? (

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ContactSection() {
   return (
-    <section className="bg-black text-white py-16 px-4 md:px-12 flex flex-col lg:flex-row gap-8">
+    <section className="bg-black text-white py-16 px-4 md:px-12 flex flex-col lg:flex-row gap-8 pb-20">
       {/* Left side */}
       <div className="flex-1 flex flex-col gap-6">
         {/* Headline */}

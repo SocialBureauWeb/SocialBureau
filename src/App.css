@@ -1,23 +1,7 @@
 @import "tailwindcss";
-@keyframes wave {
-  0% { transform: scaleY(0.3); }
-  50% { transform: scaleY(1); }
-  100% { transform: scaleY(0.3); }
-}
-
-.animate-wave0 {
-  animation: wave 1s ease-in-out infinite;
-  animation-delay: 0s;
-}
-.animate-wave1 {
-  animation: wave 1s ease-in-out infinite;
-  animation-delay: 0.2s;
-}
-.animate-wave2 {
-  animation: wave 1s ease-in-out infinite;
-  animation-delay: 0.4s;
-}
-.animate-wave3 {
-  animation: wave 1s ease-in-out infinite;
-  animation-delay: 0.6s;
+@font-face {
+  font-family: 'MyFont';
+  src: url('/assets/logo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }

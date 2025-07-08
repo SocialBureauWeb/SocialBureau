@@ -103,6 +103,8 @@ export const AboutTagline = () => {
         }
         /* Small screens */
         @media (max-width: 400px) {
+        padding-left:50px;
+        padding-right:50px;
           .about-text {
             font-size: 20px;
           }
