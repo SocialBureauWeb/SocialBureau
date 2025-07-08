@@ -53,13 +53,12 @@ export default function Logo({ onComplete }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        fontSize: "clamp(2rem, 6vw, 4rem)", // Responsive font size
-        fontWeight: "bold",
+        fontSize: "clamp(2rem, 6vw, 4rem)",
         fontFamily: "MyFont, sans-serif",
         overflow: "hidden",
         cursor: !userInteracted ? "pointer" : "default",
         transition: "transform 1s ease-in-out",
-        transform: showRest ? "scale(2)" : "scale(1)",
+        transform: showRest ? "scale(1.7)" : "scale(1)",
         textAlign: "center",
         padding: "0 1rem",
       }}

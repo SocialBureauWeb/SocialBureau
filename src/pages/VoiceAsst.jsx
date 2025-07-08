@@ -373,17 +373,16 @@ export default function VoiceAsst() {
           {/* Message */}
           {currentMessage && (
             <div className="mt-40 message-container rounded-2xl p-8 max-w-4xl w-full text-center shadow-2xl">
-              <div className="text-2xl leading-relaxed">
-  {highlightedText ? (
-    <>
-      <span className="font-bold">{highlightedText}</span>
-      <span className="font-thin">{currentMessage.slice(highlightedText.length)}</span>
-    </>
-  ) : (
-    <span className="font-thin">{currentMessage}</span>
-  )}
-</div>
-
+              <div className="text-xl lg:text-2xl leading-relaxed font-thin" style={{ fontFamily: "Inter, sans-serif" }}>
+                {highlightedText ? (
+                  <>
+                    <span className="font-bold text-2xl lg:text-3xl">{highlightedText}</span>
+                    <span>{currentMessage.slice(highlightedText.length)}</span>
+                  </>
+                ) : (
+                  currentMessage
+                )}
+              </div>
 
             </div>
           )}
