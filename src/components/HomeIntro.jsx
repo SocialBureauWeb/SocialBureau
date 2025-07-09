@@ -4,31 +4,22 @@ import { motion, useInView } from "framer-motion";
 import Logo from "./Logo";
 
 const HomeIntro = () => {
-  const videoRef = useRef(null);
-  const containerRef = useRef(null);
   const paragraphRef = useRef(null);
-  const contentRef = useRef(null); // 👈 Scroll target
-
-  const [isZoomed, setIsZoomed] = useState(false);
 
   const isInView = useInView(paragraphRef, {
     margin: "-20% 0px -20% 0px",
   });
 
-  const handleLogoComplete = () => {
-    contentRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const paragraph = `SocialBureau isn’t your typical performance agency. We’re the growth engine behind niche, high-velocity brands looking to scale smarter and faster. No fluff, no vanity metrics—just cultural fluency, ROI-obsession, and surgical strategy that moves the needle where it matters.`;
   const words = paragraph.split(" ");
 
   return (
     <div className="w-full text-white bg-black overflow-hidden">
-      <Logo onComplete={handleLogoComplete} />
+      <Logo />
 
       {/* Bottom Text */}
       <div
-        ref={contentRef} // 👈 Scroll target
         className="relative min-h-screen flex flex-col items-center justify-center px-4 py-40 bg-black overflow-hidden"
       >
         {/* Gradients */}
