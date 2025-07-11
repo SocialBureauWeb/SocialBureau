@@ -186,20 +186,20 @@ export default function ContactSection() {
             <div className="border-t border-neutral-700 w-full mt-4 pt-4 flex justify-center gap-4 text-gray-400">
               <a 
                 href="https://www.linkedin.com/company/socialbureau-in" 
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition"
               >
-                <i class="fab fa-linkedin"></i>
+                <i className="fab fa-linkedin"></i>
               </a>
-              <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
+              <a href="#" className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="mailto:info@socialbureau.in" class="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
+              <a href="mailto:info@socialbureau.in" className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
                 <i className="fas fa-envelope"></i>
               </a>
-              <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
+              <a href="#" className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
+              <a href="#" className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
                 <i className="fab fa-instagram"></i>
               </a>
 

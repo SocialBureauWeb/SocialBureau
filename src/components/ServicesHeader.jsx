@@ -23,7 +23,7 @@ const ServicesHeader = forwardRef(function ServicesHeader({ onArrowClick }, ref)
   {/* Centered Arrow */}
   <div className="flex justify-center">
     <motion.img
-      src="/assets/arrow.png"
+      src="/assets/arrow.webp"
       alt="Scroll Down"
       className="w-8 h-8 my-10 cursor-pointer"
       animate={{

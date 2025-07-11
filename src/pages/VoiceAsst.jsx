@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import { div } from "framer-motion/client";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 export default function VoiceAsst() {
   const [isActive, setIsActive] = useState(false);
@@ -10,6 +11,26 @@ export default function VoiceAsst() {
   const [conversationStep, setConversationStep] = useState("initial");
   const [suggestions, setSuggestions] = useState([]);
   const speechRef = useRef(null);
+useEffect(() => {
+  const handleVoicesChanged = () => {
+    speechSynthesis.getVoices(); // Load voices
+  };
+  speechSynthesis.addEventListener('voiceschanged', handleVoicesChanged);
+  speechSynthesis.getVoices(); // Trigger early loading
+  return () => {
+    speechSynthesis.removeEventListener('voiceschanged', handleVoicesChanged);
+  };
+}, []);
+const voicesRef = useRef([]);
+
+useEffect(() => {
+  const loadVoices = () => {
+    voicesRef.current = speechSynthesis.getVoices();
+  };
+  speechSynthesis.addEventListener('voiceschanged', loadVoices);
+  loadVoices();
+  return () => speechSynthesis.removeEventListener('voiceschanged', loadVoices);
+}, []);
 
   // New states for audio visualization
   const audioContextRef = useRef(null);
@@ -20,13 +41,13 @@ export default function VoiceAsst() {
   const [isVoiceActive, setIsVoiceActive] = useState(false); // To control line animation
 
   const messages = {
-    greeting: "Good morning! I'm your advanced virtual assistant, ready to help you explore our website and services.",
+    greeting: "Welcome back visionary. Let’s build empires.",
     whatCanIDo: "What would you like to discover today? I can help you learn about our company, explore career opportunities, understand our services, or connect you with our team.",
     aboutUs: "We are a dynamic company driven by innovation and excellence, committed to delivering exceptional results and pushing the boundaries of what's possible.",
     joinTeam: "We'd love for you to join our exceptional team. We're always looking for passionate talent who share our vision for innovation and excellence.",
     services: "Our comprehensive services are designed to deliver exceptional results for our clients, combining cutting-edge technology with personalized solutions.",
     contact: "You can contact us anytime through multiple channels. We're here to help and respond promptly to all inquiries.",
-    goodbye: "Thanks for visiting and engaging with us! Have a wonderful day ahead."
+    goodbye: "Thanks for visiting and engaging with us!"
   };
 
   const suggestionButtons = {
@@ -82,7 +103,8 @@ export default function VoiceAsst() {
   utterance.pitch = 1.1;
   utterance.volume = 0.9;
 
-  const voices = speechSynthesis.getVoices();
+  const voices = voicesRef.current;
+
   const preferredVoice = voices.find(v =>
     (v.name.includes("Samantha") ||
       v.name.includes("Karen") ||
@@ -432,7 +454,7 @@ export default function VoiceAsst() {
             ) : (
               <button
                 onClick={stopAssistant}
-                className="hover:bg-[#ff0000] suggestion-btn px-6 py-3 rounded-xl font-semibold flex items-center space-x-2"
+                className="hover:bg-[#ff0000] suggestion-btn px-6 py-3 rounded-xl mb-20 font-semibold flex items-center space-x-2"
               >
                 <i className="fas fa-stop"></i>
                 <span>Stop</span>
@@ -443,6 +465,7 @@ export default function VoiceAsst() {
 
 
       </div>
+      <Navbar/>
       <div className="mb-0 ">
         <Footer />
       </div>

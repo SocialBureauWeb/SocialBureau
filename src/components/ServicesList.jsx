@@ -14,15 +14,15 @@ const icons = [
 
 // Array of unique images, one for each card (replace URLs as needed)
 const cardImages = [
-  "assets/service1.jpeg",
-  "assets/service2.jpeg",
-  "assets/service3.jpeg",
-  "assets/service4.jpeg",
-  "assets/service5.jpeg",
-  "assets/service6.jpeg",
-  "assets/service7.jpeg",
-  "assets/service8.jpeg",
-  "assets/service9.jpeg",
+  "assets/service1.webp",
+  "assets/service2.webp",
+  "assets/service3.webp",
+  "assets/service4.webp",
+  "assets/service5.webp",
+  "assets/service6.webp",
+  "assets/service7.webp",
+  "assets/service8.webp",
+  "assets/service9.webp",
 ];
 
 const cards = [
@@ -148,7 +148,7 @@ const ServicesList = forwardRef(function ServicesList(_, ref) {
                   <div className="flex items-center justify-between">
                     {icons[idx]}
                     <span className="text-neutral-400">
-                      <svg
+                      <a href="#"><svg
                         className="w-5 h-5"
                         fill="none"
                         stroke="currentColor"
@@ -160,7 +160,7 @@ const ServicesList = forwardRef(function ServicesList(_, ref) {
                           strokeLinejoin="round"
                           d="M9 5l7 7-7 7"
                         />
-                      </svg>
+                      </svg></a>
                     </span>
                   </div>
                   <div>

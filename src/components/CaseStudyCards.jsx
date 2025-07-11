@@ -102,7 +102,7 @@ export default function CaseStudyCards() {
   };
 
   return (
-    <main className="bg-black min-h-screen p-4 sm:p-2 flex flex-col gap-20 bg-[url('/assets/bg.png')] bg-cover bg-center bg-fixed overflow-y-auto">
+    <main className="bg-black min-h-screen p-4 sm:p-2 flex flex-col gap-20 bg-[url('/assets/bg.webp')] bg-cover bg-center bg-fixed overflow-y-auto">
   {caseStudies.map((cs, index) => (
     <section
       key={index}

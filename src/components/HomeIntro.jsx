@@ -1,4 +1,3 @@
-// HomeIntro.jsx
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Logo from "./Logo";
@@ -16,9 +15,10 @@ const HomeIntro = () => {
 
   return (
     <div className="w-full text-white bg-black overflow-hidden">
-      <Logo />
-
-      {/* Bottom Text */}
+      <section className="h-screen w-full relative z-10">
+  <Logo />
+</section>
+<section className="relative z-20">
       <div
         className="relative min-h-screen flex flex-col items-center justify-center px-4 py-40 bg-black overflow-hidden"
       >
@@ -93,6 +93,7 @@ const HomeIntro = () => {
           })}
         </p>
       </div>
+      </section>
     </div>
   );
 };

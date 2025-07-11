@@ -168,7 +168,7 @@ function Card({
   }
 
   return (
-    <div  class="mob-title"
+    <div  className="mob-title"
       style={{
         borderRadius: "32px",
         background,

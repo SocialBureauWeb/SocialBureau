@@ -11,9 +11,11 @@ import { Blog } from './pages/Blog'
 import { Contact } from './pages/Contact'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { ServiceDetails } from './pages/ServiceDetails'
-import VoiceAsst from './pages/VoiceAsst'
+import { NotFound } from './pages/NotFound'
+import React, { lazy, Suspense } from 'react';
 
 function App() {
+  const VoiceAsst = lazy(() => import('./pages/VoiceAsst'));
   return (
     <>
       <BrowserRouter>
@@ -27,7 +29,12 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/service" element={<ServiceDetails />} />
-        <Route path="/voice" element={<VoiceAsst />} />
+        <Route path="/voice" element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <VoiceAsst />
+          </Suspense>
+        } />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
     </>

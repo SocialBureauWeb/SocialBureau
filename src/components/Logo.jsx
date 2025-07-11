@@ -33,7 +33,7 @@ export default function Logo() {
   };
 
   return (
-    <main className="w-screen h-screen overflow-hidden relative bg-black">
+<main className="w-screen min-h-screen overflow-visible relative bg-black">
       {/* Text Overlay */}
       <div
         className="absolute text-5xl lg:text-7xl top-[23vh] lg:top-[45vh] lg:left-[10vw] w-full lg:text-left text-center text-white z-10 p-5"

@@ -47,18 +47,18 @@ export const DetailedService = () => {
   }, [locked]);
 
   return (
-    <div className="flex flex-col md:flex-row h-screen w-screen overflow-hidden">
+    <div className="flex flex-col md:flex-row w-screen overflow-hidden">
       {/* LEFT STATIC IMAGE */}
-      <div className="relative w-full md:w-1/2 h-64 md:h-full flex-shrink-0">
+      <div className="relative w-full md:w-1/3 md:h-full flex-shrink-0">
         {/* Base grayscale */}
         <img
-          src="assets/service1.jpeg"
+          src="assets/service1.webp"
           alt="Grayscale Base"
           className="w-full h-full object-cover grayscale"
         />
         {/* Color reveal */}
         <img
-          src="assets/service1.jpeg"
+          src="assets/service1.webp"
           alt="Color Reveal"
           className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none transition-clip-path duration-200 ease-out"
           style={{
@@ -68,7 +68,7 @@ export const DetailedService = () => {
       </div>
 
       {/* RIGHT SIDE SCROLLABLE */}
-      <div className="w-full md:w-1/2 h-full overflow-y-auto p-6 md:p-12 bg-black text-white">
+      <div className="w-full md:w-2/3 h-full overflow-y-auto p-6 md:p-12 bg-black text-white">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Service Title</h1>
         <div className="flex mb-2 py-2">
           <span className="block w-[100vw] h-0.5 bg-[#ff0000] mr-2 md:mr-3" />

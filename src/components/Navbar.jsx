@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
@@ -29,7 +29,7 @@ const navigate=useNavigate();
   }`}
 >
 
-      <img src="assets/logo.png" alt="logo" className="h-10" onClick={() =>navigate('/')
+      <img src="assets/logo.webp" alt="logo" className="h-10" onClick={() =>navigate('/')
             }/>
 
       {/* Desktop Menu */}
@@ -46,7 +46,7 @@ const navigate=useNavigate();
       {/* Hamburger */}
       <div className="md:hidden">
         <button onClick={toggleMenu}>
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          {menuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
         </button>
       </div>
 

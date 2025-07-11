@@ -7,7 +7,7 @@ const HomeFooter = () => {
       <div className="flex flex-col md:flex-row items-center justify-between px-5 md:px-12 lg:px-50 gap-4 bg-transparent">
         <div className="flex items-center space-x-2">
           <img
-            src="/assets/trillionedition.png"
+            src="/assets/trillionedition.webp"
             alt="Logo"
             className="h-14 md:h-20 cursor-pointer"
             onClick={() =>
@@ -35,7 +35,7 @@ const HomeFooter = () => {
                     "_blank"
                   );
                 }} className="bg-[#ff0000] text-white px-4 py-2 lg:m-20 rounded-md hover:bg-red-700 transition flex items-center gap-2 mt-1 md:mt-0">
-          <img src="/assets/phone.png" alt="phone" className="h-5 md:h-6" />
+          <img src="/assets/phone.webp" alt="phone" className="h-5 md:h-6" />
           <span className="text-sm md:text-base font-medium">
             Book a Strategy Call
           </span>

@@ -126,6 +126,7 @@ export default function ShowServices() {
   }, []);
 
   return (
+    <div>
     <div
       ref={containerRef}
       className="relative w-screen h-screen flex items-center justify-center bg-black overflow-hidden select-none"
@@ -135,7 +136,7 @@ export default function ShowServices() {
     >
       {/* Red Sphere Image */}
       <img
-        src="assets/particles.png"
+        src="assets/particles.webp"
         alt="Red Sphere"
         className="absolute h-[120vh] z-0"
         style={{ filter: "drop-shadow(0 0 60px rgba(255,0,0,0.4))" }}
@@ -182,14 +183,18 @@ export default function ShowServices() {
                             transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
                   
                   <p className="text-sm text-center text-white">
-                    {card.description}
+                    {card.description}<br/><br/>
+                    <a href="/service" className="text-[#ff0000]">Read More</a>
                   </p>
                 </div>
               </div>
             </div>
           );
         })}
+        
       </div>
+      </div>
+      <p className="text-white text-xl text-center justify-center">&lt;- Drag the cards to view more -&gt;</p>
     </div>
   );
 }

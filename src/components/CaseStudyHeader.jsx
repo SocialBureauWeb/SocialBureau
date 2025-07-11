@@ -26,7 +26,7 @@ export default function CaseStudyHeader() {
       <div className="flex-1 mt-10 md:mt-0 md:ml-12 flex justify-center">
         {/* Replace the src below with your actual image path or URL */}
         <img
-          src="/assets/3d.png"
+          src="/assets/3d.webp"
           alt="Case Study illustration"
           className="w-full rounded-lg shadow-lg"
         />
