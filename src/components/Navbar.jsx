@@ -29,8 +29,8 @@ const navigate=useNavigate();
   }`}
 >
 
-      <img src="assets/logo.webp" alt="logo" className="h-10" onClick={() =>navigate('/')
-            }/>
+      <img src="/assets/logo.webp" alt="logo" className="h-10" onClick={() => navigate('/')} />
+
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex gap-8 ">

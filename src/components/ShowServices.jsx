@@ -184,7 +184,7 @@ export default function ShowServices() {
                   
                   <p className="text-sm text-center text-white">
                     {card.description}<br/><br/>
-                    <a href="/service" className="text-[#ff0000]">Read More</a>
+                    <a href={`/services/${encodeURIComponent(card.title)}`} className="text-[#ff0000]">Read More</a>
                   </p>
                 </div>
               </div>
