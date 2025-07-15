@@ -12,19 +12,6 @@ const icons = [
   <i className="fas fa-rocket text-red-600 text-2xl"></i>,
 ];
 
-// Array of unique images, one for each card (replace URLs as needed)
-const cardImages = [
-  "assets/service1.webp",
-  "assets/service2.webp",
-  "assets/service3.webp",
-  "assets/service4.webp",
-  "assets/service5.webp",
-  "assets/service6.webp",
-  "assets/service7.webp",
-  "assets/service8.webp",
-  "assets/service9.webp",
-];
-
 const cards = [
   {
     title: "Full-Funnel Performance Marketing",
@@ -86,69 +73,21 @@ const ServicesList = forwardRef(function ServicesList(_, ref) {
   return (
     <section
       ref={ref}
-      className="min-h-screen bg-black flex items-center justify-center py-8"
+      className="min-h-screen bg-black flex items-center justify-center"
     >
-      <style>{`
-        .slide-up {
-          opacity: 0;
-          transform: translateY(50px);
-          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .slide-up.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        .flip-card {
-          width: 340px;
-          height: 320px;
-          perspective: 1000px;
-        }
-        .flip-inner {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
-          transform-style: preserve-3d;
-        }
-        .flip-card:hover .flip-inner,
-        .flip-card:focus-within .flip-inner {
-          transform: rotateY(180deg);
-        }
-        .flip-front, .flip-back {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          backface-visibility: hidden;
-          border-radius: 0.75rem;
-          overflow: hidden;
-        }
-        .flip-front {
-          background: #000;
-          border: 1px solid #262626;
-          box-shadow: 0 4px 24px 0 rgba(239, 68, 68, 0.0);
-        }
-        .flip-back {
-          background-size: cover;
-          background-position: center;
-          transform: rotateY(180deg);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      `}</style>
       <div
         ref={gridRef}
         className={`max-w-7xl w-full px-2 sm:px-4 slide-up${isVisible ? " visible" : ""}`}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 pb-40">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {cards.map((card, idx) => (
-            <div className="flip-card group" tabIndex={0} key={card.title}>
+            <div className="p-5 py-10" tabIndex={0} key={card.title}>
               <div className="flip-inner">
                 <div className="flip-front flex flex-col gap-4 p-6 sm:p-8 shadow-lg">
                   <div className="flex items-center justify-between">
                     {icons[idx]}
                     <span className="text-neutral-400">
-                      <a href="#"><svg
+                      <a href={`/services/${encodeURIComponent(card.title)}`}><svg
                         className="w-5 h-5"
                         fill="none"
                         stroke="currentColor"
@@ -172,14 +111,7 @@ const ServicesList = forwardRef(function ServicesList(_, ref) {
                     </p>
                   </div>
                 </div>
-                <div
-                  className="flip-back"
-                  style={{
-                    backgroundImage: `url('${cardImages[idx % cardImages.length]}')`
-                  }}
-                >
-                  {/* Image only on back */}
-                </div>
+                
               </div>
             </div>
           ))}

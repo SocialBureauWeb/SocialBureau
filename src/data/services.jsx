@@ -174,10 +174,10 @@ const servicesData = {
       ],
     },
     whyItWorks: {
-      title: "",
-      highlight: "",
-      subtext: "",
-    },
+  title: "Why",
+  highlight: "It Works",
+  subtext: "Our landing systems are engineered to test, learn, and maximize user action through behavioral insights, UX precision, and CRO best practices.",
+},
     cta: {
       headline: "Want Pages That Convert? Let’s Test That.",
       button: "",
@@ -251,22 +251,22 @@ const servicesData = {
       items: [
         {
     title: "API integrations across ad, CRM, and analytics platforms",
-    description: "",
+    description: "Unify data and automate workflows by syncing all your growth tools through seamless API connections.",
     icon: <FaLink />,
   },
   {
     title: "Event-based audience segmentation",
-    description: "",
+    description: "Dynamically group users based on real-time behavior to enable precise targeting and personalization.",
     icon: <FaCalendarAlt />,
   },
   {
     title: "Growth loops triggered by user behavior",
-    description: "",
+    description: "Turn user actions into automated growth triggers that continuously attract and retain new users.",
     icon: <FaSyncAlt />,
   },
   {
     title: "Zero-delay personalization engines",
-    description: "",
+    description: "Deliver instant, behavior-driven experiences that adapt to users in real time for higher conversions.",
     icon: <FaBolt/>,
   },
       ],
@@ -362,10 +362,10 @@ const servicesData = {
       title: "How",
       highlight: "We Do It",
       items: [
-        { title: "Creator partnerships based on CPA & ROI", description: "", icon: <FaHandshake /> },
-  { title: "UGC built to serve as funnel entry + retargeting asset", description: "", icon: <FaVideo /> },
-  { title: "Native-style creative that matches platform norms", description: "", icon: <FaFilm /> },
-  { title: "Attribution-first tracking", description: "", icon: <FaMapMarkerAlt /> },
+        { title: "Creator partnerships based on CPA & ROI", description: "Collaborate with creators using performance-based models to drive measurable growth and maximize return on spend.", icon: <FaHandshake /> },
+  { title: "UGC built to serve as funnel entry + retargeting asset", description: "Leverage authentic user-generated content to attract new users and power high-converting retargeting campaigns.", icon: <FaVideo /> },
+  { title: "Native-style creative that matches platform norms", description: "Craft ads that blend seamlessly into each platform’s look and feel, boosting engagement and trust.", icon: <FaFilm /> },
+  { title: "Attribution-first tracking", description: "Implement precise tracking systems that clearly connect content, clicks, and conversions across the entire journey.", icon: <FaMapMarkerAlt /> },
 
       ],
     },
