@@ -33,7 +33,7 @@ export default function CaseStudyCards() {
         { value: "94%", label: "Client Retention" }
       ],
       quote:
-        "They didn't just improve our marketing—they elevated our entire brand positioning. We now attract the caliber of clients who truly value sophisticated wealth management.",
+        "They didn't just improve our marketing, they elevated our entire brand positioning. We now attract the caliber of clients who truly value sophisticated wealth management.",
       quoteAuthor: "Sarah Chen, Managing Partner, Sovereign Capital"
     }
   ];

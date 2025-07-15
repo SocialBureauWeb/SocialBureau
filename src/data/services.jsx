@@ -57,7 +57,8 @@ import {
   FaHandshake,
   FaChartBar,
   FaShoppingCart,
-  FaBalanceScale
+  FaBalanceScale,
+  FaChartPie
 } from "react-icons/fa";
 
 const servicesData = {
@@ -69,7 +70,7 @@ const servicesData = {
     hero: {
       headline: "Beyond the Click: Performance Marketing that Actually Performs",
       highlight: "Performance Marketing",
-      subtext: "Your audience isn’t one-size-fits-all—neither is our approach. We design full-funnel campaigns tailored to your vertical, optimized for outcomes that compound.",
+      subtext: "Your audience isn’t one-size-fits-all, neither is our approach. We design full-funnel campaigns tailored to your vertical, optimized for outcomes that compound.",
     },
     problems: {
       title: "Pain",
@@ -93,7 +94,7 @@ const servicesData = {
     whyItWorks: {
       title: "Why",
       highlight: "It Works",
-      subtext: "We don’t chase impressions. We architect systems that turn attention into revenue—and keep compounding it.",
+      subtext: "We don’t chase impressions. We architect systems that turn attention into revenue and keep compounding it.",
     },
     cta: {
       headline: "Ready to unlock full-funnel ROI?",
@@ -108,9 +109,9 @@ const servicesData = {
       description: "Design customer journeys that convert. We build funnel architectures that map awareness to revenue with P&L-aligned growth pathways.",
     },
     hero: {
-      headline: "Leaky Funnels Kill Growth—We Seal and Scale Yours",
+      headline: "Leaky Funnels Kill Growth, We Seal and Scale Yours",
       highlight: "Seal and Scale",
-      subtext: "You’re driving traffic, but few convert. There’s no clear path from discovery to revenue. Your funnel isn’t a system—it’s a gamble.",
+      subtext: "You’re driving traffic, but few convert. There’s no clear path from discovery to revenue. Your funnel isn’t a system, it’s a gamble.",
     },
     problems: {
       title: "What",
@@ -151,7 +152,7 @@ const servicesData = {
     hero: {
       headline: "Stop Losing Customers on the Last Click",
       highlight: "Last Click",
-      subtext: "Your ad worked. They clicked. But your page didn’t convert—and now they’re gone.",
+      subtext: "Your ad worked. They clicked. But your page didn’t convert and now they’re gone.",
     },
     problems: {
       title: "Results You ",
@@ -190,7 +191,7 @@ const servicesData = {
       description: "Go beyond generic messaging. We uncover linguistic, cultural, and psychological drivers that differentiate your brand in saturated markets.",
     },
     hero: {
-      headline: "Messaging That Resonates—Not Just Fills Space",
+      headline: "Messaging That Resonates, Not Just Fills Space",
       highlight: "Resonates",
       subtext: "Generic messages don’t cut it. You need positioning that speaks your audience’s language.",
     },
@@ -231,7 +232,7 @@ const servicesData = {
       description: "Connect product, marketing, and ops through API-led automation. Eliminate handoff friction and scale faster with growth loops.",
     },
     hero: {
-      headline: "Data Moves Faster Than Humans—So Should Your Marketing",
+      headline: "Data Moves Faster Than Humans, So Should Your Marketing",
       highlight: "Faster",
       subtext: "Manual processes stall personalization and waste cycles.",
     },
@@ -290,7 +291,7 @@ const servicesData = {
     hero: {
       headline: "In Niche Markets, Culture Converts. We Get It.",
       highlight: "Culture Converts.",
-      subtext: "We don’t guess what works in healthtech, crypto, aesthetics, or fintech. We speak the codes—and we write new ones.",
+      subtext: "We don’t guess what works in healthtech, crypto, aesthetics, or fintech. We speak the codes and we write new ones.",
     },
     problems: {
       title: "What",
@@ -329,7 +330,7 @@ const servicesData = {
     whyItWorks: {
       title: "Why",
       highlight: "It Works",
-      subtext: "We don’t just market to niches—we live in them.",
+      subtext: "We don’t just market to niches, we live in them.",
     },
     cta: {
       headline: "Crack Your Category",
@@ -341,10 +342,10 @@ const servicesData = {
   "Influencer & UGC Growth Engines": {
     meta: {
       title: "Influencer & UGC Growth Systems Tied to Revenue | Social Bureau",
-      description: "We contract creators on performance KPIs—not vanity metrics. Our UGC flows into your funnel for trust, reach, and conversion.",
+      description: "We contract creators on performance KPIs, not vanity metrics. Our UGC flows into your funnel for trust, reach, and conversion.",
     },
     hero: {
-      headline: "Creators Who Convert—Not Just Perform",
+      headline: "Creators Who Convert, Not Just Perform",
       highlight: "Convert",
       subtext: "You’ve tried influencer campaigns. They got 'likes.' But no lift.",
     },
@@ -386,7 +387,7 @@ const servicesData = {
       description: "Trigger-based email flows and nurture systems that increase repeat purchases and reduce churn. Built for vertical-specific behavior.",
     },
     hero: {
-      headline: "Retention Isn’t Luck—It’s Engineered",
+      headline: "Retention Isn’t Luck, It’s Engineered",
       highlight: "Engineered",
       subtext: "We build automated flows that turn one-time customers into loyal fans.",
     },
@@ -418,6 +419,63 @@ const servicesData = {
     cta: {
       headline: "Let’s Turn Lifecycle Into Lifetime Value.",
       button: "Book a Retention Audit",
+      link: "tel:+916238422887",
+    },
+  },
+  "Software GTM & Growth Architecture": {
+    meta: {
+      title: "Software Growth Architecture & GTM Strategy for SaaS | Social Bureau",
+      description: "Bridge the gap between product, marketing, and rev-ops. We build PLG and sales-assist systems that grow MRR with precision.",
+    },
+    hero: {
+      headline: "More Than Launch, We Build Growth Architecture for SaaS",
+      highlight: "Growth Architecture",
+      subtext: "From user acquisition to retention, we engineer scalable systems that power sustainable SaaS growth.",
+    },
+    problems: {
+      title: "Problem We ",
+      highlight: "Solve",
+      items: [
+        { title: "Trials don’t convert.", icon: <FaUserClock /> },
+  { title: "MRR stagnates.", icon: <FaChartLine /> },
+  { title: "Sales and marketing aren’t aligned.", icon: <FaHandshake /> },
+      ],
+    },
+    deliveries: {
+      title: "Our",
+      highlight: "Solution",
+      items: [
+        {
+    title: "GTM architecture tailored for PLG or hybrid",
+    description: "Design product-led or hybrid go-to-market systems using real-time user behavior and smart triggers.",
+    icon: <FaProjectDiagram />, // Represents structured systems like GTM architecture
+  },
+  {
+    title: "RevOps + funnel + messaging alignment",
+    description: "Unify revenue operations and messaging across the funnel using performance-driven insights.",
+    icon: <FaChartPie />, // Reflects analysis and revenue-focused alignment
+  },
+  {
+    title: "Feature-triggered onboarding and upsell flows",
+    description: "Automate contextual onboarding, upsells, and retention flows based on in-app feature engagement.",
+    icon: <FaRocket />, // Indicates onboarding, growth, and forward momentum
+  },
+  {
+    title: "Cross-functional growth loops",
+    description: "Collaborate across teams to iterate, test, and scale the highest-impact growth experiments.",
+    icon: <FaSyncAlt />, // Represents continuous loops and team synergy
+  },
+      ],
+    },
+    whyItWorks: {
+  title: "Why",
+  highlight: "It Works",
+  subtext: "We architect end-to-end GTM systems that connect product usage to revenue outcomes, intelligently and predictably.",
+},
+
+    cta: {
+      headline: "Ready to Scale Smarter",
+      button: "",
       link: "tel:+916238422887",
     },
   },

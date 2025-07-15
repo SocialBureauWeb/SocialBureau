@@ -56,7 +56,7 @@ const cards = [
   },
   {
     title: "Lifecycle & Email Automation Strategy",
-    description: "Trigger behavior-based flows that drive revenue—measured on 30-day impact."
+    description: "Trigger behavior-based flows that drive revenue, measured on 30-day impact."
   },
   {
     title: "Software GTM & Growth Architecture",

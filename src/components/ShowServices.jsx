@@ -55,7 +55,7 @@ const cards = [
     icon: <i className="fas fa-envelope text-red-600 text-2xl"></i>,
     title: "Lifecycle & Email Automation Strategy",
     description:
-      "Trigger behavior-based flows that drive revenue—measured on 30-day impact.",
+      "Trigger behavior-based flows that drive revenue, measured on 30-day impact.",
   },
   {
     id: 9,

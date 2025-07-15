@@ -7,7 +7,7 @@ function randBetween(min, max) {
 
 export const AboutSB = () => {
   const text =
-    "At Social Bureau, we don’t just build marketing campaigns—we architect high-performance ecosystems. Operating under the strategic umbrella of Trillion Edition, we fuse analytical muscle with cultural nuance to drive real outcomes for niche, high-growth brands.";
+    "At Social Bureau, we don’t just build marketing campaigns, we architect high-performance ecosystems. Operating under the strategic umbrella of Trillion Edition, we fuse analytical muscle with cultural nuance to drive real outcomes for niche, high-growth brands.";
 
   const words = text.match(/[\w’'-]+|[.,—]/g);
   const refs = useRef([]);

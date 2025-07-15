@@ -167,7 +167,7 @@ export default function ContactSection() {
             </div>
             <p className="text-lg mb-6">
               "Whether you're stuck in an acquisition plateau or scaling to your
-              next revenue ceiling—let's talk."
+              next revenue ceiling, let's talk."
             </p>
             <div className="flex justify-center gap-8 mb-4">
               <div>
