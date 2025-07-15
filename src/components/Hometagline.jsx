@@ -7,18 +7,19 @@ const Hometagline = () => {
 
   const getResponsiveStyles = () => ({
     container: {
-      outline: "none",
-      minHeight: "30vh",
-      height: "50dvh",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexDirection: "column",
-      background: "#000",
-      overflow: "hidden",
-      userSelect: "none",
-      padding: "0 4vw",
-    },
+  zIndex: 10,
+  position: "relative", // required for zIndex to apply
+  outline: "none",
+  minHeight: "30vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  background: "#000",
+  overflow: "hidden",
+  userSelect: "none",
+  padding: "0 4vw",
+},
     linesRow: {
       display: "flex",
       flexDirection: window.innerWidth < 600 ? "column" : "row",

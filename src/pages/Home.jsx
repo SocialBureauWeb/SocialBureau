@@ -14,6 +14,7 @@ export const Home = () => {
         <HomeIntro/>
         <Navbar/>
         <HomeCards/>
+        <div style={{ height: "10vh" }} />
         <Hometagline/>
         <HomeFooter/>
         <Footer/>

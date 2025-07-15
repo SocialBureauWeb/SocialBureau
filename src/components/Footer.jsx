@@ -33,7 +33,7 @@ export default function Footer() {
 
   {/* Instagram */}
   <a
-    href="#"
+    href="https://www.instagram.com/socialbureau.in?igsh=NW4yd2lldzRpNXdj"
     className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition"
   >
     <FaInstagram size={20} />
@@ -41,7 +41,7 @@ export default function Footer() {
 
   {/* Facebook */}
   <a
-    href="#"
+    href="https://www.facebook.com/share/15yzVd5Qcw/"
     className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition"
   >
     <FaFacebook size={20} />

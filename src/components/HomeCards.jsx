@@ -1,239 +1,118 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 const cards = [
-  {
-    title: "Full-Funnel Performance Marketing",
-    color: "red-gradient",
-    align: "left",
-  },
-  {
-    title: "API-Driven Growth Loops",
-    color: "black-card",
-    align: "center",
-  },
-  {
-    title: "Vertical-Specific Strategy",
-    color: "white-card",
-    align: "left",
-  },
-  {
-    title: "Advanced CRO & Lifecycle Systems",
-    color: "red-gradient",
-    align: "left",
-  },
+  { title: "Full-Funnel Performance Marketing", color: "#c00", textColor: "#fff" },
+  { title: "API-Driven Growth Loops", color: "#111", textColor: "#fff" },
+  { title: "Vertical-Specific Strategy", color: "#fff", textColor: "#111" },
+  { title: "Advanced CRO & Lifecycle Systems", color: "#c00", textColor: "#fff" },
 ];
 
-export default function HomeCards() {
-  const containerRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [hasBeenVisible, setHasBeenVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          setHasBeenVisible(true);
-        } else if (hasBeenVisible) {
-          setIsVisible(false);
-        }
-      },
-      {
-        threshold: 0.2,
-      }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hasBeenVisible]);
-
+export default function GridScrollCards() {
   return (
-    <div className="cards-root">
-      <style>
-        {`
-          .cards-root {
-            min-height: 100vh;
-            background: #000;
+    <div className="scroll-root">
+      <style>{`
+        .scroll-root {
+  position: relative;
+  z-index: 1;
+  height: 600vh;
+  background: #000;
+  font-family: 'EB Garamond', serif;
+}
+
+@media (max-width: 800px) {
+  .scroll-root {
+    height: 300vh; /* ↓ Reduce on mobile to avoid visual dominance */
+  }
+}
+
+        .sticky-grid {
+          position: sticky;
+          top: 0;
+          height: 100vh;
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          gap: 2rem;
+          padding: 3rem;
+          align-items: center;
+          justify-items: center;
+        }
+        .center-text {
+          grid-column: 2;
+          grid-row: 1 / span 2;
+          color: white;
+          font-size: 2.4rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+        @media (max-width: 800px) {
+          .sticky-grid {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: stretch;
-            font-family: 'EB Garamond', serif;
+            padding: 2rem 1rem;
+            gap: 1.5rem;
           }
-          .cards-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 32px;
-            width: 90vw;
-            max-width: 1800px;
-            margin: 15vh auto;
-            min-height: 90vh;
-            align-items: stretch;
-            /* Initial: exit state */
-            transform: translateY(60px) scale(0.9);
-            opacity: 0;
-            pointer-events: none;
-            transition:
-              transform 1s cubic-bezier(0.77,0,0.175,1),
-              opacity 1s cubic-bezier(0.77,0,0.175,1);
+          .center-text {
+            order: -1;
+            font-size: 1.3rem;
+            padding: 5rem;
           }
-          .cards-grid.visible {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0) scale(1);
-            transition:
-              transform 1s cubic-bezier(0.33,1,0.68,1),
-              opacity 1s cubic-bezier(0.33,1,0.68,1);
-          }
-          .cards-grid.exiting {
-            /* Exit state: slide out + fade */
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(60px) scale(0.96);
-            transition:
-              transform 0.7s cubic-bezier(0.77,0,0.175,1),
-              opacity 0.7s cubic-bezier(0.77,0,0.175,1);
-          }
-          .card-center-text {
-            grid-column: 2;
-            grid-row: 1 / span 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          /* Responsive styles */
-          @media (max-width: 1100px) {
-            .cards-grid {
-              grid-template-columns: 1fr;
-              grid-template-rows: unset;
-              gap: 24px;
-              margin: 4vh auto;
-              min-height: unset;
-              width: 98vw;
-            }
-            .card-center-text {
-              grid-column: 1 !important;
-              grid-row: auto !important;
-              order: 3;
-              min-height: unset;
-              width: 100%;
-            }
-          }
-          @media (max-width: 600px) {
-            .cards-grid {
-              gap: 16px;
-              padding: 0 4vw;
-            }
-          }
-        `}
-      </style>
-      <div
-        ref={containerRef}
-        className={`cards-grid${isVisible ? " visible" : hasBeenVisible ? " exiting" : ""}`}
-      >
-        <Card {...cards[0]} style={{}} />
-        <Card {...cards[2]} style={{}} />
-        <div className="card-center-text">
-          <CenterText />
-        </div>
-        <Card {...cards[1]} style={{}} />
-        <Card {...cards[3]} style={{}} />
+        }
+      `}</style>
+
+      <div className="sticky-grid">
+        <AnimatedCard card={cards[0]} index={0} slow />
+        <AnimatedCard card={cards[2]} index={2} />
+        <div className="center-text ">Real-Time KPI Visibility</div>
+        <AnimatedCard card={cards[1]} index={1} slow />
+        <AnimatedCard card={cards[3]} index={3} />
       </div>
     </div>
   );
 }
+<div style={{ height: '100vh' }} /> // pushes the next section below
 
-function Card({
-  title,
-  color,
-  align = "left",
-  style = {},
-}) {
-  let background;
-  if (color === "red-gradient") {
-    background = "radial-gradient(ellipse at 80% 20%, #c00 0%, #800 100%)";
-  } else if (color === "white-card") {
-    background = "#fff";
-  } else if (color === "black-card") {
-    background = "#111";
-  } else {
-    background = "#000";
-  }
+function AnimatedCard({ card, index, slow = false }) {
+  const { scrollYProgress } = useScroll();
+  const total = 5;
+  const step = 1 / total;
+
+  const start = index * step;
+  const end = start + step;
+
+  const range = slow
+    ? [start, start + step * 0.75, end]
+    : [start, (start + end) / 2, end];
+
+  const y = useTransform(scrollYProgress, range, [150, 0, -30]);
+  const opacity = useTransform(scrollYProgress, range, [0, 1, 1]);
+  const scale = useTransform(scrollYProgress, range, [0.95, 1.05, 1]);
+
+  const springY = useSpring(y, { stiffness: 70, damping: 20 });
+  const springScale = useSpring(scale, { stiffness: 120, damping: 15 });
 
   return (
-    <div  className="mob-title"
+    <motion.div
+      className="min-h-[24vh] lg:h-[30vh] w-[80vw] sm:w-[60vw] lg:w-[30vw] lg:text-3xl text-xl"
       style={{
-        borderRadius: "32px",
-        background,
-        color: color === "white-card" ? "#111" : "#fff",
-        padding: "40px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        minHeight: "340px",
-        boxShadow:
-          color === "white-card"
-            ? "0 2px 32px #1113"
-            : "0 2px 32px #c003",
-        position: "relative",
-        width: "100%",
-        ...style,
-      }}
-    >
-      <style>
-        {`
-          .card-title {
-            font-family: 'EB Garamond', serif;
-            font-weight: 400;
-            font-size: 2.6rem;
-            line-height: 1.1;
-            text-align: ${align};
-          }
-          @media (max-width: 600px) {
-            .card-title {
-              font-size: 1.8rem;              
-              text-align:center;
-            }
-          }
-        `}
-      </style>
-      <div>
-        <div className="card-title">
-          {title}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-
-function CenterText() {
-  return (
-    <div
-      style={{
-        color: "#fff",
-        fontFamily: "'EB Garamond', serif",
-        fontSize: "2.6rem",
-        fontWeight: 400,
+        background: card.color,
+        color: card.textColor,
+        borderRadius: "24px",
+        padding: "2rem",
         textAlign: "center",
-        width: "100%",
-        padding: "0 12px",
-        lineHeight: 1.12,
-        letterSpacing: "-0.01em",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: "200px",
+        y: springY,
+        scale: springScale,
+        opacity,
       }}
     >
-      Real-Time KPI Visibility
-    </div>
+      {card.title}
+    </motion.div>
   );
 }

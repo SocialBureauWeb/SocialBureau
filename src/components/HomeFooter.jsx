@@ -15,8 +15,7 @@ const HomeFooter = () => {
             }
           />
           <span className="text-base md:text-lg text-white">
-            Backed by <br />
-            <em className="italic font-bold">TrillionEdition</em>
+            A TrillionEdition Venture
           </span>
         </div>
         <p className="text-base md:text-lg text-white text-center md:text-right">
