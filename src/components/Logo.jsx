@@ -48,7 +48,7 @@ export default function Logo() {
       {/* Zoomed & Cropped Spline */}
       <div
         style={{
-          transform: "scale(1.4)",
+          transform: "scale(2.1)",
           transformOrigin: "center",
           width: "100vw",
           height: "100vh",
