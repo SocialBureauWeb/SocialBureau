@@ -33,7 +33,7 @@ const HomeFooter = () => {
                     "https://wa.me/916238422887?text=Hello, I would like to learn more.",
                     "_blank"
                   );
-                }} className="bg-[#ff0000] text-white px-4 py-2 lg:m-20 rounded-md hover:bg-red-700 transition flex items-center gap-2 mt-1 md:mt-0">
+                }} className="bg-[#ff0000] text-white px-4 py-2 lg:m-20 rounded-md hover:bg-[#ff0000] transition flex items-center gap-2 mt-1 md:mt-0">
           <img src="/assets/phone.webp" alt="phone" className="h-5 md:h-6" />
           <span className="text-sm md:text-base font-medium">
             Book a Strategy Call

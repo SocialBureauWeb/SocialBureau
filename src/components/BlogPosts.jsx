@@ -90,14 +90,14 @@ export default function BlogPosts() {
         <div className="bg-gradient-to-br from-black to-[#3f0000] rounded-xl p-8 shadow-xl border border-[#3f0000]">
   <button
     onClick={() => setActivePost(null)}
-    className="flex items-center text-sm text-gray-400 hover:text-red-500 transition-colors mb-6"
+    className="flex items-center text-sm text-gray-400 hover:text-[#ff0000] transition-colors mb-6"
   >
     <i className="fas fa-arrow-left mr-2"></i>
     Back to Posts
   </button>
 
   <div className="flex items-center mb-3 space-x-3">
-    <span className="text-xs font-medium bg-white text-red-600 px-3 py-1 rounded-full">
+    <span className="text-xs font-medium bg-white text-[#ff0000] px-3 py-1 rounded-full">
       {activePost.category}
     </span>
     <span className="text-xs text-white">{activePost.time}</span>
@@ -144,7 +144,7 @@ export default function BlogPosts() {
             {filteredPosts.map((post) => (
               <div
                 key={post.id}
-                className="bg-white rounded-lg border shadow-sm overflow-hidden flex flex-col hover:border-red-500 hover:scale-105 transition"
+                className="bg-white rounded-lg border shadow-sm overflow-hidden flex flex-col hover:border-[#ff0000] hover:scale-105 transition"
               >
                 <div
                   className={`h-1 bg-[#ff0000]`}
@@ -174,7 +174,7 @@ export default function BlogPosts() {
                     </div>
                     <button
                       onClick={() => setActivePost(post)}
-                      className="text-sm text-red-500 font-medium hover:scale-125"
+                      className="text-sm text-[#ff0000] font-medium hover:scale-125"
                     >
                       Read More →
                     </button>

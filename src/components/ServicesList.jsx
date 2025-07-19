@@ -1,15 +1,15 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 
 const icons = [
-  <i className="fas fa-chart-line text-red-600 text-2xl"></i>,
-  <i className="fas fa-sitemap text-red-600 text-2xl"></i>,
-  <i className="fas fa-bullseye text-red-600 text-2xl"></i>,
-  <i className="fas fa-comments text-red-600 text-2xl"></i>,
-  <i className="fas fa-cogs text-red-600 text-2xl"></i>,
-  <i className="fas fa-crosshairs text-red-600 text-2xl"></i>,
-  <i className="fas fa-users text-red-600 text-2xl"></i>,
-  <i className="fas fa-envelope text-red-600 text-2xl"></i>,
-  <i className="fas fa-rocket text-red-600 text-2xl"></i>,
+  <i className="fas fa-chart-line text-[#ff0000] text-2xl"></i>,
+  <i className="fas fa-sitemap text-[#ff0000] text-2xl"></i>,
+  <i className="fas fa-bullseye text-[#ff0000] text-2xl"></i>,
+  <i className="fas fa-comments text-[#ff0000] text-2xl"></i>,
+  <i className="fas fa-cogs text-[#ff0000] text-2xl"></i>,
+  <i className="fas fa-crosshairs text-[#ff0000] text-2xl"></i>,
+  <i className="fas fa-users text-[#ff0000] text-2xl"></i>,
+  <i className="fas fa-envelope text-[#ff0000] text-2xl"></i>,
+  <i className="fas fa-rocket text-[#ff0000] text-2xl"></i>,
 ];
 
 const cards = [

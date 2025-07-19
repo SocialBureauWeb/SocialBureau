@@ -26,8 +26,8 @@ export default function ContactSection() {
               <label
                 htmlFor="name"
                 className="absolute left-3 top-3 text-gray-400 text-base transition-all
-                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
-                peer-valid:-top-2 peer-valid:text-xs peer-valid:text-red-500 peer-valid:bg-neutral-800 px-1"
+                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-[#ff0000] peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
+                peer-valid:-top-2 peer-valid:text-xs peer-valid:text-[#ff0000] peer-valid:bg-neutral-800 px-1"
               >
                 Name
               </label>
@@ -45,8 +45,8 @@ export default function ContactSection() {
               <label
                 htmlFor="company"
                 className="absolute left-3 top-3 text-gray-400 text-base transition-all
-                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
-                peer-valid:-top-2 peer-valid:text-xs peer-valid:text-red-500 peer-valid:bg-neutral-800 px-1"
+                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-[#ff0000] peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
+                peer-valid:-top-2 peer-valid:text-xs peer-valid:text-[#ff0000] peer-valid:bg-neutral-800 px-1"
               >
                 Company
               </label>
@@ -64,8 +64,8 @@ export default function ContactSection() {
               <label
                 htmlFor="role"
                 className="absolute left-3 top-3 text-gray-400 text-base transition-all
-                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
-                peer-valid:-top-2 peer-valid:text-xs peer-valid:text-red-500 peer-valid:bg-neutral-800 px-1"
+                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-[#ff0000] peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
+                peer-valid:-top-2 peer-valid:text-xs peer-valid:text-[#ff0000] peer-valid:bg-neutral-800 px-1"
               >
                 Role
               </label>
@@ -83,8 +83,8 @@ export default function ContactSection() {
               <label
                 htmlFor="email"
                 className="absolute left-3 top-3 text-gray-400 text-base transition-all
-                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
-                peer-valid:-top-2 peer-valid:text-xs peer-valid:text-red-500 peer-valid:bg-neutral-800 px-1"
+                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-[#ff0000] peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
+                peer-valid:-top-2 peer-valid:text-xs peer-valid:text-[#ff0000] peer-valid:bg-neutral-800 px-1"
               >
                 Email
               </label>
@@ -103,8 +103,8 @@ export default function ContactSection() {
             <label
               htmlFor="website"
               className="absolute left-3 top-3 text-gray-400 text-base transition-all
-              peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
-              peer-valid:-top-2 peer-valid:text-xs peer-valid:text-red-500 peer-valid:bg-neutral-800 px-1"
+              peer-focus:-top-2 peer-focus:text-xs peer-focus:text-[#ff0000] peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
+              peer-valid:-top-2 peer-valid:text-xs peer-valid:text-[#ff0000] peer-valid:bg-neutral-800 px-1"
             >
               Website
             </label>
@@ -122,8 +122,8 @@ export default function ContactSection() {
             <label
               htmlFor="message"
               className="absolute left-3 top-3 text-gray-400 text-base transition-all
-              peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
-              peer-valid:-top-2 peer-valid:text-xs peer-valid:text-red-500 peer-valid:bg-neutral-800 px-1"
+              peer-focus:-top-2 peer-focus:text-xs peer-focus:text-[#ff0000] peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
+              peer-valid:-top-2 peer-valid:text-xs peer-valid:text-[#ff0000] peer-valid:bg-neutral-800 px-1"
             >
               What challenge are you solving?
             </label>
@@ -146,7 +146,7 @@ export default function ContactSection() {
         "_blank"
       );
     }}
-    className="bg-[#ff0000] text-white px-4 py-2 rounded-md hover:bg-red-700 flex items-center justify-center w-full md:w-auto max-w-xs"
+    className="bg-[#ff0000] text-white px-4 py-2 rounded-md hover:scale-105 flex items-center justify-center w-full md:w-auto max-w-xs"
   >
     <i className="fas fa-calendar-alt p-2"></i>
     <span>Book a Call</span>

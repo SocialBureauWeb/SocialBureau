@@ -128,10 +128,10 @@ const prepareQuarterlyChartData = (values) =>
   {caseStudies.map((cs, index) => (
     <section
       key={index}
-      className="relative p-5 transition duration-300 border border-neutral-800 hover:border-red-600 hover:scale-105 rounded-lg bg-black shadow-sm mx-[5vw] lg:mx-[20vw] sm:p-10 hover:shadow-[0_0_20px_2px_rgba(239,68,68,0.5)] before:content-[''] before:absolute before:top-0 before:left-0 before:h-1 before:w-full before:origin-left before:scale-x-0 before:bg-red-600 before:transition-transform before:duration-300 hover:before:scale-x-100"
+      className="relative p-5 transition duration-300 border border-neutral-800 hover:border-[#ff0000] hover:scale-105 rounded-lg bg-black shadow-sm mx-[5vw] lg:mx-[20vw] sm:p-10 hover:shadow-[0_0_20px_2px_rgba(239,68,68,0.5)] before:content-[''] before:absolute before:top-0 before:left-0 before:h-1 before:w-full before:origin-left before:scale-x-0 before:bg-[#ff0000] before:transition-transform before:duration-300 hover:before:scale-x-100"
     >
           <div className="flex flex-col gap-4 mb-6">
-            <span className="inline-block bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest w-40">
+            <span className="inline-block bg-[#ff0000] text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest w-40">
               {cs.category}
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
@@ -141,7 +141,7 @@ const prepareQuarterlyChartData = (values) =>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-              <h3 className="flex items-center text-red-600 font-semibold text-lg mb-2">
+              <h3 className="flex items-center text-[#ff0000] font-semibold text-lg mb-2">
                 The Bottleneck
               </h3>
               <p className="text-neutral-400 text-base leading-relaxed">
@@ -149,7 +149,7 @@ const prepareQuarterlyChartData = (values) =>
               </p>
             </div>
             <div>
-              <h3 className="flex items-center text-red-600 font-semibold text-lg mb-2">
+              <h3 className="flex items-center text-[#ff0000] font-semibold text-lg mb-2">
                 What We Did
               </h3>
               <p className="text-neutral-400 text-base leading-relaxed">
@@ -159,7 +159,7 @@ const prepareQuarterlyChartData = (values) =>
           </div>
 
           <div>
-  <h3 className="flex items-center text-red-600 font-semibold text-lg mb-4">
+  <h3 className="flex items-center text-[#ff0000] font-semibold text-lg mb-4">
     The Outcome
   </h3>
   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
@@ -174,7 +174,7 @@ const prepareQuarterlyChartData = (values) =>
           key={idx}
           className="bg-neutral-50 rounded-lg p-4 text-center flex flex-col gap-2"
         >
-          <div className="text-2xl sm:text-3xl font-bold text-red-600">
+          <div className="text-2xl sm:text-3xl font-bold text-[#ff0000]">
             <CountUpNumber end={item.value} />
           </div>
           <div className="text-sm text-neutral-600">{item.label}</div>
@@ -204,7 +204,7 @@ const prepareQuarterlyChartData = (values) =>
 </div>
 
 
-          <blockquote className="border-l-4 border-red-600 pl-4 italic text-neutral-400 text-base">
+          <blockquote className="border-l-4 border-[#ff0000] pl-4 italic text-neutral-400 text-base">
             "{cs.quote}"
             <footer className="not-italic font-bold mt-2 text-sm text-neutral-200">
               — {cs.quoteAuthor}

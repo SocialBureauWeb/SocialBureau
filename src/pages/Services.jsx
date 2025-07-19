@@ -6,6 +6,7 @@ import ServiceFooter from '../components/ServiceFooter'
 import Footer from '../components/Footer'
 import HomeMouse from '../components/HomeMouse'
 import ShowServices from '../components/ShowServices'
+import Ser from '../components/Ser'
 
 export const Services = () => {
     const listRef = useRef(null);
@@ -35,7 +36,8 @@ const [isMobile, setIsMobile] = useState(false);
       {isMobile ? (
                 <ServicesList />
             ) : (
-                <ShowServices />
+                // <ShowServices />
+                <Ser/>
             )}
 
             {!isMobile && (

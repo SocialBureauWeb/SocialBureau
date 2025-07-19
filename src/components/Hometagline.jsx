@@ -38,7 +38,7 @@ const Hometagline = () => {
               <span
                 key={line}
                 className={`text-2xl font-semibold ${
-                  line === "High brain power." ? "text-white" : "text-red-600"
+                  line === "High brain power." ? "text-white" : "text-[#ff0000]"
                 }`}
               >
                 {line}
@@ -49,7 +49,7 @@ const Hometagline = () => {
                 key={line}
                 className={`text-2xl font-semibold transition-opacity duration-1000 ${
                   step === idx ? "opacity-100" : "opacity-30"
-                } ${line === "High brain power." ? "text-white" : "text-red-600"}`}
+                } ${line === "High brain power." ? "text-white" : "text-[#ff0000]"}`}
               >
                 {line}
               </span>

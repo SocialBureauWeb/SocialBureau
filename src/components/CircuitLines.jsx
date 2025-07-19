@@ -53,16 +53,16 @@ export default function AnimatedTextImageSection() {
 <div className="mt-8 md:mt-0 relative overflow-hidden rounded-xl shadow-xl md:h-[100vh] w-[50vw] sm:w-[100vw] sm:h-0">
   {/* The Image */}
   <img
-    src="/assets/people.png"
+    src="/assets/people1.png"
     alt="SocialBureau"
     className="md:w-[90vw] md:h-[100vh] w-[100vw] h-0 object-cover"
   />
 
   {/* Left Gradient */}
-  <div className="absolute top-0 left-0 h-0 w-1/5 bg-gradient-to-r from-black to-transparent z-10" />
+  <div className="absolute top-0 left-0 h-0 md:h-[100vh] w-1/4 bg-gradient-to-r from-black to-transparent z-15" />
 
   {/* Right Gradient */}
-  <div className="absolute top-0 right-0 h-0 w-1/5 bg-gradient-to-l from-black to-transparent z-10" />
+  <div className="absolute top-0 right-0 h-0 md:h-[100vh] w-1/4 bg-gradient-to-l from-black to-transparent z-50" />
 </div>
 
     </div>

@@ -98,7 +98,7 @@ const nextService = currentIndex < serviceTitles.length - 1 ? serviceTitles[curr
       {/* CTA */}
       <div className="flex flex-col md:flex-row items-center justify-between bg-black py-20 md:py-10 rounded-lg px-10 md:px-12 lg:px-40 gap-4 mt-4">
         <h2 className="text-xl md:text-2xl font-semibold text-white text-center md:text-left">{cta.headline}</h2>
-        <button onClick={() => window.open(cta.link, "_blank")} className="bg-[#ff0000] text-white px-4 py-2 rounded-md hover:bg-red-700 flex items-center">
+        <button onClick={() => window.open(cta.link, "_blank")} className="bg-[#ff0000] text-white px-4 py-2 rounded-md hover:bg-[#ff0000] flex items-center">
           <img src="/assets/phone.webp" alt="phone" className="h-5 md:h-6 mr-2" />
           <span>{cta.button}</span>
         </button>
@@ -110,7 +110,7 @@ const nextService = currentIndex < serviceTitles.length - 1 ? serviceTitles[curr
       to={`/services/${encodeURIComponent(prevService)}`}
       className="text-[#ff0000] border hover:scale-110 transition-colors px-5 py-3 rounded-md text-sm md:text-base"
     >
-      <FaArrowLeft className="text-sm text-red-500" />
+      <FaArrowLeft className="text-sm text-[#ff0000]" />
     </Link>
   ) : <div />}
 
@@ -119,7 +119,7 @@ const nextService = currentIndex < serviceTitles.length - 1 ? serviceTitles[curr
       to={`/services/${encodeURIComponent(nextService)}`}
       className="hover:scale-110 transition-colors px-5 py-3 rounded-md text-sm md:text-base text-[#ff0000] border"
     >
-      <FaArrowRight className="text-sm text-red-500" />
+      <FaArrowRight className="text-sm text-[#ff0000]" />
     </Link>
   ) : <div />}
 </div>

@@ -3,63 +3,63 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 const cards = [
   {
     id: 1,
-    icon: <i className="fas fa-chart-line text-red-600 text-2xl"></i>,
+    icon: <i className="fas fa-chart-line text-[#ff0000] text-2xl"></i>,
     title: "Full-Funnel Performance Marketing",
     description:
       "Click costs don't matter if they don't convert. We deploy vertical-informed models and 14-day sprint cycles tied to LTV, not vanity ROAS.",
   },
   {
     id: 2,
-    icon: <i className="fas fa-sitemap text-red-600 text-2xl"></i>,
+    icon: <i className="fas fa-sitemap text-[#ff0000] text-2xl"></i>,
     title: "Funnel Architecture & Growth Pathways",
     description:
       "Stop leaking revenue. We map awareness to LTV with customized, P&L-aligned blueprints.",
   },
   {
     id: 3,
-    icon: <i className="fas fa-bullseye text-red-600 text-2xl"></i>,
+    icon: <i className="fas fa-bullseye text-[#ff0000] text-2xl"></i>,
     title: "Conversion Rate Optimization & Landing Systems",
     description:
       "Built with psychology, tested with micro-experiments. Bounce less. Convert more.",
   },
   {
     id: 4,
-    icon: <i className="fas fa-comments text-red-600 text-2xl"></i>,
+    icon: <i className="fas fa-comments text-[#ff0000] text-2xl"></i>,
     title: "Messaging & Positioning for Niche Brands",
     description:
       "Generic messaging kills growth. We uncover category-specific codes using ethnographic and linguistic analysis.",
   },
   {
     id: 5,
-    icon: <i className="fas fa-cogs text-red-600 text-2xl"></i>,
+    icon: <i className="fas fa-cogs text-[#ff0000] text-2xl"></i>,
     title: "API-Driven Growth & Automated Distribution",
     description:
       "Eliminate friction. Merge engineering + marketing for compounding growth loops.",
   },
   {
     id: 6,
-    icon: <i className="fas fa-crosshairs text-red-600 text-2xl"></i>,
+    icon: <i className="fas fa-crosshairs text-[#ff0000] text-2xl"></i>,
     title: "Niche Market Penetration Strategy",
     description:
       "We speak fluent healthtech, crypto, fintech, and more. Penetrate with precision.",
   },
   {
     id: 7,
-    icon: <i className="fas fa-users text-red-600 text-2xl"></i>,
+    icon: <i className="fas fa-users text-[#ff0000] text-2xl"></i>,
     title: "Influencer & UGC Growth Engines",
     description:
       "No vanity metrics. Just creator content built for performance and attribution.",
   },
   {
     id: 8,
-    icon: <i className="fas fa-envelope text-red-600 text-2xl"></i>,
+    icon: <i className="fas fa-envelope text-[#ff0000] text-2xl"></i>,
     title: "Lifecycle & Email Automation Strategy",
     description:
       "Trigger behavior-based flows that drive revenue, measured on 30-day impact.",
   },
   {
     id: 9,
-    icon: <i className="fas fa-rocket text-red-600 text-2xl"></i>,
+    icon: <i className="fas fa-rocket text-[#ff0000] text-2xl"></i>,
     title: "Software GTM & Growth Architecture",
     description:
       "PLG meets sales-assist in a system that converts trials and grows MRR.",
@@ -167,7 +167,7 @@ export default function ShowServices() {
                 zIndex: isActive ? 20 : 10,
               }}
             >
-              <div className="w-48 h-64 bg-black bg-opacity-90 rounded-xl shadow-xl p-4 flex flex-col justify-center items-center text-white border border-red-500
+              <div className="w-48 h-64 bg-black bg-opacity-90 rounded-xl shadow-xl p-4 flex flex-col justify-center items-center text-white border border-[#ff0000]
                           group relative overflow-hidden transition-all duration-300 ease-in-out hover:bg-opacity-100 hover:shadow-2xl">
                 
                 {/* Icon and Title - Always visible */}

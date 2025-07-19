@@ -23,8 +23,8 @@ const HomeIntro = () => {
         className="relative min-h-screen flex flex-col items-center justify-center px-4 py-40 bg-black overflow-hidden"
       >
         {/* Gradients */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-red-500 via-transparent to-transparent rounded-full blur-3xl z-0"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-red-700 via-transparent to-transparent rounded-full blur-2xl z-0"></div>
+        <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-[#ff0000] via-transparent to-transparent rounded-full blur-3xl z-0"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-[#ff0000] via-transparent to-transparent rounded-full blur-2xl z-0"></div>
 
         {/* Main Content */}
         <div className="relative z-10 text-white text-center">
