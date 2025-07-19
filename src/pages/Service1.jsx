@@ -4,6 +4,9 @@ import MetaTags from '../components/MetaTags';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import servicesData from '../data/services';
+import { Link } from 'react-router-dom';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+
 
 const Service1 = () => {
   const { serviceTitle } = useParams();
@@ -20,6 +23,11 @@ const Service1 = () => {
   }
 
   const { meta, hero, problems, deliveries, whyItWorks, cta } = data;
+const serviceTitles = Object.keys(servicesData);
+const currentIndex = serviceTitles.indexOf(decodedTitle);
+
+const prevService = currentIndex > 0 ? serviceTitles[currentIndex - 1] : null;
+const nextService = currentIndex < serviceTitles.length - 1 ? serviceTitles[currentIndex + 1] : null;
 
   return (
     <div>
@@ -95,6 +103,27 @@ const Service1 = () => {
           <span>{cta.button}</span>
         </button>
       </div>
+      {/* Navigation Buttons */}
+<div className="flex justify-between items-center bg-black py-10 px-6 max-w-6xl mx-auto text-white ">
+  {prevService ? (
+    <Link
+      to={`/services/${encodeURIComponent(prevService)}`}
+      className="text-[#ff0000] border hover:scale-110 transition-colors px-5 py-3 rounded-md text-sm md:text-base"
+    >
+      <FaArrowLeft className="text-sm text-red-500" />
+    </Link>
+  ) : <div />}
+
+  {nextService ? (
+    <Link
+      to={`/services/${encodeURIComponent(nextService)}`}
+      className="hover:scale-110 transition-colors px-5 py-3 rounded-md text-sm md:text-base text-[#ff0000] border"
+    >
+      <FaArrowRight className="text-sm text-red-500" />
+    </Link>
+  ) : <div />}
+</div>
+
           <Footer/>
     </div>
   );

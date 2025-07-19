@@ -12,7 +12,7 @@ export default function ContactSection() {
         </h2>
 
         {/* Form */}
-        <form className="bg-[#110d0d] p-6 rounded-lg shadow-lg space-y-4">
+        <form action="https://formsubmit.co/17244b37f46cab7e360118ff6abcced5" method="POST" className="bg-[#110d0d] p-6 rounded-lg shadow-lg space-y-4" >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Name */}
             <div className="relative">
@@ -26,7 +26,7 @@ export default function ContactSection() {
               <label
                 htmlFor="name"
                 className="absolute left-3 top-3 text-gray-400 text-base transition-all
-                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800
+                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
                 peer-valid:-top-2 peer-valid:text-xs peer-valid:text-red-500 peer-valid:bg-neutral-800 px-1"
               >
                 Name
@@ -45,7 +45,7 @@ export default function ContactSection() {
               <label
                 htmlFor="company"
                 className="absolute left-3 top-3 text-gray-400 text-base transition-all
-                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800
+                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
                 peer-valid:-top-2 peer-valid:text-xs peer-valid:text-red-500 peer-valid:bg-neutral-800 px-1"
               >
                 Company
@@ -64,7 +64,7 @@ export default function ContactSection() {
               <label
                 htmlFor="role"
                 className="absolute left-3 top-3 text-gray-400 text-base transition-all
-                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800
+                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
                 peer-valid:-top-2 peer-valid:text-xs peer-valid:text-red-500 peer-valid:bg-neutral-800 px-1"
               >
                 Role
@@ -83,7 +83,7 @@ export default function ContactSection() {
               <label
                 htmlFor="email"
                 className="absolute left-3 top-3 text-gray-400 text-base transition-all
-                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800
+                peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
                 peer-valid:-top-2 peer-valid:text-xs peer-valid:text-red-500 peer-valid:bg-neutral-800 px-1"
               >
                 Email
@@ -103,7 +103,7 @@ export default function ContactSection() {
             <label
               htmlFor="website"
               className="absolute left-3 top-3 text-gray-400 text-base transition-all
-              peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800
+              peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
               peer-valid:-top-2 peer-valid:text-xs peer-valid:text-red-500 peer-valid:bg-neutral-800 px-1"
             >
               Website
@@ -122,39 +122,38 @@ export default function ContactSection() {
             <label
               htmlFor="message"
               className="absolute left-3 top-3 text-gray-400 text-base transition-all
-              peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800
+              peer-focus:-top-2 peer-focus:text-xs peer-focus:text-red-500 peer-focus:bg-neutral-800 peer-focus:rounded-lg peer-valid:rounded-lg
               peer-valid:-top-2 peer-valid:text-xs peer-valid:text-red-500 peer-valid:bg-neutral-800 px-1"
             >
               What challenge are you solving?
             </label>
           </div>
-
-          {/* Buttons */}
-          <div className="pt-4">
-            <p className="font-medium mb-3">Talk to a Growth Architect</p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => {
-                  window.open(
-                    "https://wa.me/916238422887?text=Hello, I would like to learn more.",
-                    "_blank"
-                  );
-                }}
-                className="bg-[#ff0000] hover:bg-red-700 transition text-white font-medium py-3 px-5 rounded-md flex items-center justify-center gap-2"
-              >
-                <i className="fas fa-calendar-alt"></i>
-                <span>Book a Call</span>
-              </button>
-              <a
+          <button type="submit"
   href="mailto:admin@socialbureau.in?subject=Inquiry&body=I would like to learn more."
   className="border border-[#ff0000] text-white hover:bg-[#ff0000] transition font-medium py-3 px-5 rounded-md flex items-center justify-center gap-2"
 >
   <i className="fas fa-envelope"></i>
   Drop Us a Line
-</a>
+</button>
+<div className="flex flex-col md:flex-row bg-black py-10 rounded-lg px-6 md:px-12 justify-center md:justify-between items-center text-center md:text-left mt-4 space-y-4 md:space-y-0">
+  <p className="text-lg md:text-xl font-semibold text-white">
+    Talk to a Growth Architect
+  </p>
+  <button
+    onClick={() => {
+      window.open(
+        "https://wa.me/916238422887?text=Hello, I would like to learn more.",
+        "_blank"
+      );
+    }}
+    className="bg-[#ff0000] text-white px-4 py-2 rounded-md hover:bg-red-700 flex items-center justify-center w-full md:w-auto max-w-xs"
+  >
+    <i className="fas fa-calendar-alt p-2"></i>
+    <span>Book a Call</span>
+  </button>
+</div>
 
-            </div>
-          </div>
+          
         </form>
       </div>
 
@@ -171,13 +170,13 @@ export default function ContactSection() {
             </p>
             <div className="flex justify-center gap-8 mb-4">
               <div>
-                <p className="text-[#ff0000] text-xl font-semibold">500+</p>
+                <p className="text-[#ff0000] text-xl font-semibold">50+</p>
                 <p className="uppercase text-xs tracking-wide text-gray-400">
                   Growth Projects
                 </p>
               </div>
               <div>
-                <p className="text-[#ff0000] text-xl font-semibold">$2.5B+</p>
+                <p className="text-[#ff0000] text-xl font-semibold">$2M+</p>
                 <p className="uppercase text-xs tracking-wide text-gray-400">
                   Revenue Generated
                 </p>
@@ -190,16 +189,16 @@ export default function ContactSection() {
               >
                 <i className="fab fa-linkedin"></i>
               </a>
-              <a href="#" className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
+              <a href="https://twitter.com" className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
                 <i className="fab fa-twitter"></i>
               </a>
               <a href="mailto:info@socialbureau.in" className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
                 <i className="fas fa-envelope"></i>
               </a>
-              <a href="#" className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
+              <a href="https://www.facebook.com/share/15yzVd5Qcw" className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="#" className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
+              <a href="https://www.instagram.com/socialbureau.in?igsh=NW4yd2lldzRpNXdj" className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-[#ff0000] hover:scale-105 transition">
                 <i className="fab fa-instagram"></i>
               </a>
 

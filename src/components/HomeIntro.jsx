@@ -15,9 +15,9 @@ const HomeIntro = () => {
 
   return (
     <div className="w-full text-white bg-black overflow-hidden">
-      <section className="h-screen w-full relative z-10">
+      {/* <section className="h-screen w-full relative z-10">
   <Logo />
-</section>
+</section> */}
 <section className="relative z-20">
       <div
         className="relative min-h-screen flex flex-col items-center justify-center px-4 py-40 bg-black overflow-hidden"
@@ -39,7 +39,7 @@ const HomeIntro = () => {
             <div className="flex-3 text-white">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-10 lg:leading-15 font-sans">
                 We engineer full-funnel growth strategies that{" "}
-                <span className="text-[#ff0000] font-bold">outperform</span>,
+                <span className="text-[#ff0000] font-bold" style={{fontFamily:'Arial'}}>outperform</span>,
                 not just perform. Powered by precision, insight, and
                 vertical-native expertise.
               </h2>
@@ -50,48 +50,50 @@ const HomeIntro = () => {
 
       <div className="mt-[10vh] px-6 lg:px-40 text-white text-center">
         <p
-          ref={paragraphRef}
-          className="text-xl sm:text-xl md:text-2xl lg:text-3xl leading-relaxed flex flex-wrap justify-center gap-x-1"
+  ref={paragraphRef}
+  className="text-xl sm:text-xl md:text-2xl lg:text-3xl leading-relaxed flex flex-wrap justify-center gap-x-1"
+>
+  {words.map((word, index) => {
+    if (index === 0 && word.startsWith("SocialBureau")) {
+      return (
+        <motion.span
+          key={index}
+          animate={
+            isInView
+              ? { scale: 1, opacity: 1 }
+              : { scale: 0.8, opacity: 0.2 }
+          }
+          transition={{ duration: 0.4, delay: index * 0.05 }}
+          className="inline-block"
+          style={{ fontFamily: "MyFont, sans-serif" }}
         >
-          {words.map((word, index) => {
-            if (word.startsWith("SocialBureau")) {
-              return (
-                <motion.span
-                  key={index}
-                  animate={
-                    isInView
-                      ? { scale: 1, opacity: 1 }
-                      : { scale: 0.8, opacity: 0.2 }
-                  }
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="inline-block"
-                >
-                  Social
-                  <span className="text-[#ff0000]">B</span>
-                  ureau
-                  {word.length > "SocialBureau".length
-                    ? word.slice("SocialBureau".length)
-                    : ""}
-                  &nbsp;
-                </motion.span>
-              );
-            }
-            return (
-              <motion.span
-                key={index}
-                animate={
-                  isInView
-                    ? { scale: 1, opacity: 1 }
-                    : { scale: 0.8, opacity: 0.2 }
-                }
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="inline-block"
-              >
-                {word}&nbsp;
-              </motion.span>
-            );
-          })}
-        </p>
+          Social
+          <span className="text-[#ff0000]">B</span>
+          ureau
+          {word.length > "SocialBureau".length
+            ? word.slice("SocialBureau".length)
+            : ""}
+          &nbsp;
+        </motion.span>
+      );
+    }
+    return (
+      <motion.span
+        key={index}
+        animate={
+          isInView
+            ? { scale: 1, opacity: 1 }
+            : { scale: 0.8, opacity: 0.2 }
+        }
+        transition={{ duration: 0.4, delay: index * 0.05 }}
+        className="inline-block"
+      >
+        {word}&nbsp;
+      </motion.span>
+    );
+  })}
+</p>
+
       </div>
       </section>
     </div>

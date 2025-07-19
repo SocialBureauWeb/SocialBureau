@@ -196,7 +196,7 @@ const servicesData = {
       subtext: "Generic messages don’t cut it. You need positioning that speaks your audience’s language.",
     },
     problems: {
-      title: "What",
+      title: "What ",
       highlight: "We Solve",
       items: [
         { title: "Generic brand voice that lacks market traction", icon: <FaBullhorn/> },
@@ -237,7 +237,7 @@ const servicesData = {
       subtext: "Manual processes stall personalization and waste cycles.",
     },
     problems: {
-      title: "The",
+      title: "The ",
       highlight: "Problem",
       items : [
   { title: "Manual workflows", icon: <FaRegClock  /> },
@@ -294,7 +294,7 @@ const servicesData = {
       subtext: "We don’t guess what works in healthtech, crypto, aesthetics, or fintech. We speak the codes and we write new ones.",
     },
     problems: {
-      title: "What",
+      title: "What ",
       highlight: "You Get",
       items: [
         { title: "Vertical-specific insights", icon: <FaMicroscope /> },
@@ -350,7 +350,7 @@ const servicesData = {
       subtext: "You’ve tried influencer campaigns. They got 'likes.' But no lift.",
     },
     problems: {
-      title: "Your",
+      title: "Your ",
       highlight: "Reality",
       items: [
         { title: "Low ROI influencer spends", icon: <FaMoneyBillWave /> },
@@ -392,7 +392,7 @@ const servicesData = {
       subtext: "We build automated flows that turn one-time customers into loyal fans.",
     },
     problems: {
-      title: "We",
+      title: "We ",
       highlight: "Fix",
       items: [
         { title: "Weak onboarding and post-purchase flows", icon: <FaSuitcase /> },

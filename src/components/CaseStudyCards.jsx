@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-
+import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 export default function CaseStudyCards() {
   const caseStudies = [
     {
@@ -15,6 +15,12 @@ export default function CaseStudyCards() {
         { value: "$2.0M", label: "MRR Growth" },
         { value: "89%", label: "Conversion Rate" }
       ],
+      quarterlyData: {
+  CAC: [120, 100, 90, 67],        // % or raw
+  LTV: [100, 130, 180, 245],
+  MRR: [0.8, 1.2, 1.6, 2.0],      // in millions
+  Conversion: [65, 70, 78, 89]
+},
       quote:
         "The transformation in our customer journey was remarkable. We went from selling watches to curating lifetime relationships with collectors who truly appreciate our heritage.",
       quoteAuthor: "Marcus Zimmermann, CEO, Chronos Heritage"
@@ -30,13 +36,29 @@ export default function CaseStudyCards() {
         { value: "52%", label: "CAC Reduction" },
         { value: "278%", label: "LTV Increase" },
         { value: "$18.0M", label: "MRR Growth" },
-        { value: "94%", label: "Client Retention" }
+        { value: "94%", label: "Conversion Rate" }
       ],
+      quarterlyData: {
+  CAC: [120, 100, 90, 67],        // % or raw
+  LTV: [100, 130, 180, 245],
+  MRR: [0.8, 1.2, 1.6, 2.0],      // in millions
+  Conversion: [65, 70, 78, 89]
+},
       quote:
         "They didn't just improve our marketing, they elevated our entire brand positioning. We now attract the caliber of clients who truly value sophisticated wealth management.",
       quoteAuthor: "Sarah Chen, Managing Partner, Sovereign Capital"
-    }
+    },
   ];
+const labelToKey = {
+  "CAC Reduction": "CAC",
+  "LTV Increase": "LTV",
+  "MRR Growth": "MRR",
+  "Client Retention": "Retention",
+  "Conversion Rate": "Conversion",
+};
+
+const prepareQuarterlyChartData = (values) =>
+  ["Quater1", "Quater2", "Quater3", "Quater4"].map((q, i) => ({ quarter: q, value: values[i] }));
 
   const CountUpNumber = ({ end, duration = 1500 }) => {
     const [value, setValue] = useState(0);
@@ -137,25 +159,50 @@ export default function CaseStudyCards() {
           </div>
 
           <div>
-            <h3 className="flex items-center text-red-600 font-semibold text-lg mb-4">
-              The Outcome
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-              {cs.outcomes.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-neutral-50 rounded-lg p-4 text-center"
-                >
-                  <div className="text-2xl sm:text-3xl font-bold text-red-600">
-                    <CountUpNumber end={item.value} />
-                  </div>
-                  <div className="text-sm mt-1 text-neutral-600">
-                    {item.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+  <h3 className="flex items-center text-red-600 font-semibold text-lg mb-4">
+    The Outcome
+  </h3>
+  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+    {cs.outcomes.map((item, idx) => {
+      const key = labelToKey[item.label];
+      const chartData = cs.quarterlyData?.[key]
+        ? prepareQuarterlyChartData(cs.quarterlyData[key])
+        : null;
+
+      return (
+        <div
+          key={idx}
+          className="bg-neutral-50 rounded-lg p-4 text-center flex flex-col gap-2"
+        >
+          <div className="text-2xl sm:text-3xl font-bold text-red-600">
+            <CountUpNumber end={item.value} />
           </div>
+          <div className="text-sm text-neutral-600">{item.label}</div>
+
+          {chartData && (
+            <div className="h-24 mt-2">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={chartData}>
+                  <XAxis dataKey="quarter" hide />
+                  <YAxis hide />
+                  <Tooltip />
+                  <Line
+                    type="monotone"
+                    dataKey="value"
+                    stroke="#ef4444"
+                    strokeWidth={2}
+                    dot={{ r: 3 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          )}
+        </div>
+      );
+    })}
+  </div>
+</div>
+
 
           <blockquote className="border-l-4 border-red-600 pl-4 italic text-neutral-400 text-base">
             "{cs.quote}"

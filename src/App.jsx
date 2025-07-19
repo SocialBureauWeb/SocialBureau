@@ -10,7 +10,6 @@ import ScrollTop from './components/ScrollTop'
 import { Blog } from './pages/Blog'
 import { Contact } from './pages/Contact'
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { ServiceDetails } from './pages/ServiceDetails'
 import { NotFound } from './pages/NotFound'
 import React, { lazy, Suspense } from 'react';
 import Service1 from './pages/Service1'
@@ -29,7 +28,6 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/service" element={<ServiceDetails />} />
         <Route path="/services/:serviceTitle" element={<Service1 />} />
         <Route path="/voice" element={
           <Suspense fallback={<div>Loading...</div>}>

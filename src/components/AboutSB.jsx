@@ -53,7 +53,7 @@ export const AboutSB = () => {
           inset: 0,
           zIndex: 0,
           backgroundImage:
-            "radial-gradient(circle at 25% 25%, rgba(0, 0, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(56, 5, 5, 0.7) 0%, transparent 50%)",
+            "radial-gradient(circle at 75% 0%, rgba(56, 5, 5, 0.7) 0%, transparent 50%)",
         }}
       />
 

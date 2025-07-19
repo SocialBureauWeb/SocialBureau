@@ -42,7 +42,7 @@ useEffect(() => {
 
   const messages = {
     greeting: "Welcome back visionary. Let’s build empires.",
-    whatCanIDo: "What would you like to discover today? I can help you learn about our company, explore career opportunities, understand our services, or connect you with our team.",
+    whatCanIDo: "Hi, I am Socci. What would you like to discover today? I can help you learn about our company, explore career opportunities, understand our services, or connect you with our team.",
     aboutUs: "We are a dynamic company driven by innovation and excellence, committed to delivering exceptional results and pushing the boundaries of what's possible.",
     joinTeam: "We'd love for you to join our exceptional team. We're always looking for passionate talent who share our vision for innovation and excellence.",
     services: "Our comprehensive services are designed to deliver exceptional results for our clients, combining cutting-edge technology with personalized solutions.",
@@ -136,7 +136,7 @@ useEffect(() => {
   speechRef.current = utterance;
 };
 
-
+const navigate=useNavigate();
   const handleSuggestionClick = action => {
     setSuggestions([]);
     let response = "";
@@ -154,7 +154,9 @@ useEffect(() => {
         break;
       case "contact":
         response = messages.contact;
+        navigate("/contact"); 
         break;
+
       case "more":
         response = "Our company has achieved remarkable milestones through innovation, building solutions that transform industries and empower businesses worldwide.";
         break;
@@ -183,7 +185,6 @@ useEffect(() => {
     });
   };
 
-  const navigate = useNavigate();
 
   // --- Inline CSS Definition ---
   const inlineStyles = `
