@@ -181,7 +181,7 @@ export default function AboutCoreValues() {
     >
       <div className="card-inner p-8 rounded-xl h-full flex flex-col items-center text-center cyber-lines">
         <div className={`text-4xl mb-6 w-10 h-10 float`}>
-          <img src={val.icon} alt="icon" />
+          <img src={val.icon} alt={val.title} />
         </div>
         <h3 className="text-xl font-bold mb-4">{val.title}</h3>
         <p className="text-sm opacity-80">{val.desc}</p>

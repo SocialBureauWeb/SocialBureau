@@ -1,8 +1,19 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
+import { p } from 'framer-motion/client';
 
-
+const icons = [
+  <i className="fas fa-chart-line text-white text-2xl"></i>,
+  <i className="fas fa-sitemap text-2xl"></i>,
+  <i className="fas fa-bullseye text-2xl"></i>,
+  <i className="fas fa-comments  text-2xl"></i>,
+  <i className="fas fa-cogs text-2xl"></i>,
+  <i className="fas fa-crosshairs text-2xl"></i>,
+  <i className="fas fa-users  text-2xl"></i>,
+  <i className="fas fa-envelope text-2xl"></i>,
+  <i className="fas fa-rocket text-2xl"></i>,
+];
 const cards = [
   { title: 'Full-Funnel Performance Marketing', content: 'Click costs don\'t matter if they don\'t convert. We deploy vertical-informed models and 14-day sprint cycles tied to LTV, not vanity ROAS.' },
   { title: 'Funnel Architecture & Growth Pathways', content: 'Stop leaking revenue. We map awareness to LTV with customized, P&L-aligned blueprints.' },
@@ -31,8 +42,8 @@ export default function Ser() {
               transition: { duration: 0.4, ease: 'easeInOut' }
             }}
             className={clsx(
-              'bg-gradient-to-br from-[#ff0000] to-[#000] rounded-xl text-white cursor-pointer flex items-center justify-center h-[430px] overflow-hidden relative',
-              'transition-all duration-300 p-4'
+              'bg-gradient-to-br from-[#ff0000] to-[#000] h-[550px] rounded-xl text-white  flex overflow-hidden relative',
+              'transition-all duration-300 '
             )}
           >
             {activeIndex === index ? (
@@ -40,20 +51,25 @@ export default function Ser() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="text-sm opacity-90 text-left"
+                className="text-sm opacity-90 text-left "
               >
-                <h3 className="text-xl font-bold mb-2">{card.title}</h3><br/>
-                <p>{card.content}</p><br/>
-                <a href={`/services/${encodeURIComponent(card.title)}`} className='font-bold hover:text-[1rem]'>Read More </a>
+                 <img src="assets/service1.jpeg" alt="img" className='max-w-[300px]'/>
+                <h3 className="text-xl font-bold mb-2 px-5 max-w-[300px]">{card.title}</h3><br/>
+                <p className='px-5 max-w-[300px]'>{card.content}</p><br/>
+                <a href={`/services/${encodeURIComponent(card.title)}`} className='px-5 font-bold hover:text-[1rem]'>Read More →</a>
               </motion.div>
             ) : (
-              <motion.h3
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="transform -rotate-90 font-bold whitespace-nowrap text-md tracking-wide"
-              >
-                {card.title}
-              </motion.h3>
+            //   <motion.h3
+            //     initial={{ opacity: 0 }}
+            //     animate={{ opacity: 1 }}
+            //     className="transform -rotate-90 font-bold whitespace-nowrap text-md tracking-wide"
+            //   >
+            //     {card.title}
+            //   </motion.h3>
+        <p>
+            {/* {icons[index]} */}
+            <img src="assets/service1.jpeg" className='h-[550px] object-cover' alt="img" />
+        </p>
             )}
           </motion.div>
         ))}

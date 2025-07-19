@@ -8,7 +8,7 @@ const HomeFooter = () => {
         <div className="flex items-center space-x-2">
           <img
             src="/assets/trillionedition.webp"
-            alt="Logo"
+            alt="TrillionEdition"
             className="h-14 md:h-20 cursor-pointer"
             onClick={() =>
               window.open("https://trillionedition.vercel.app", "_blank")

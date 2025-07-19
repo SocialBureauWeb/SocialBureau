@@ -53,7 +53,7 @@ export default function AnimatedTextImageSection() {
 <div className="mt-8 md:mt-0 relative overflow-hidden rounded-xl shadow-xl md:h-[100vh] w-[50vw] sm:w-[100vw] sm:h-0">
   {/* The Image */}
   <img
-    src="/assets/people1.png"
+    src="/assets/crowd.webp"
     alt="SocialBureau"
     className="md:w-[90vw] md:h-[100vh] w-[100vw] h-0 object-cover"
   />
